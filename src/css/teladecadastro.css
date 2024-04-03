@@ -209,7 +209,8 @@ svg {
   display: block;
   width: 40px;
   height: 40px;
-  background-color: #2c5174;
+  background-image: url(../imgs/escudo-exclamacao.png);
+  background-size: 100%;
   bottom: 60px;
   -webkit-animation: square 25s infinite;
   animation: square 25s infinite;
@@ -221,8 +222,10 @@ svg {
 .bg-bubbles li:nth-child(1) {
   left: 3%;
   border-radius: 50em;
-  background: transparent;
-  border: 4px solid #2c5174;
+  background-image: url(../imgs/usuario-do-circulo.png);
+  background-size: 100%;
+
+  border: none;
 }
 .bg-bubbles li:nth-child(2) {
   left: 6%;
@@ -249,8 +252,10 @@ svg {
 }
 .bg-bubbles li:nth-child(5) {
   left: 70%;
-  background: transparent;
-  border: 4px solid #2c5174;
+  background-image: url(../imgs/usuario-do-circulo.png);
+  background-size: 100%;
+
+  border: none;
 }
 .bg-bubbles li:nth-child(6) {
   left: 90%;
@@ -259,8 +264,10 @@ svg {
   -webkit-animation-delay: 3s;
   animation-delay: 3s;
   border-radius: 50em;
-  background: transparent;
-  border: 4px solid #2c5174;
+  background-image: url(../imgs/escudo-exclamacao.png);
+  background-size: 100%;
+
+  border: none;
 }
 .bg-bubbles li:nth-child(7) {
   left: 32%;
@@ -268,8 +275,10 @@ svg {
   height: 60px;
   -webkit-animation-delay: 7s;
   animation-delay: 7s;
-  background: transparent;
-  border: 4px solid #2c5174;
+  background-image: url(../imgs/usuario-do-circulo.png);
+  background-size: 100%;
+
+  border: none;
 }
 .bg-bubbles li:nth-child(8) {
   left: 55%;
@@ -289,8 +298,10 @@ svg {
   -webkit-animation-duration: 40s;
   animation-duration: 40s;
   border-radius: 50em;
-  background: transparent;
-  border: 4px solid #2c5174;
+  background-image: url(../imgs/escudo-exclamacao.png);
+  background-size: 100%;
+
+  border: none;
 }
 .bg-bubbles li:nth-child(10) {
   left: 90%;
@@ -313,8 +324,10 @@ svg {
   height: 175px;
   -webkit-animation-delay: 7s;
   animation-delay: 7s;
-  background: transparent;
-  border: 4px solid #2c5174;
+  background-image: url(../imgs/escudo-do-usuario.png);
+  background-size: 100%;
+
+  border: none;
 }
 
 .bg-bubbles li:nth-child(13) {
@@ -356,3 +369,99 @@ svg {
     opacity: 0;
   }
 }
+/*Responsividade*/
+@media (max-width: 1400px) {
+  .Title-login {
+    position: absolute;
+    color: rgb(255, 255, 255);
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-weight: 900;
+    font-size: 2rem;
+    top: 10%;
+    left: 64%;
+  }
+  .div-login {
+    top: 50%;
+  }
+}
+
+@media (max-width: 900px) {
+  .Title-login {
+    top: 10%;
+  }
+  .div-login {
+    width: 400px;
+    height: 500px;
+    border-radius: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(31, 31, 31, 0.301); /* Cor de fundo para a div */
+    position: absolute;
+    gap: 20px;
+    top: 50%;
+    left: 70%;
+    padding: 10px;
+    transform: translate(-50%, -50%);
+    /* Estilos adicionais para estilizar a div como desejado */
+  }
+}
+@media (max-width: 700px) {
+  body {
+    overflow: scroll;
+  }
+  #container {
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+  }
+  #container .col-left {
+    width: 100%;
+    height: 100vh;
+    background-color: #1f441dbe;
+    opacity: 0.9;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    background: #043500;
+  }
+  .animateme {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+    z-index: -1;
+  }
+  .div-login {
+    width: 500px;
+    height: 500px;
+    left: 50%;
+    /* Estilos adicionais para estilizar a div como desejado */
+  }
+  .Title-login {
+    top: 30%;
+    left: 40%;
+  }
+}
+@media (max-width: 525px) {
+  .div-login {
+    width: 400px;
+  }
+}
+@media (max-width: 450px) {
+  .div-login {
+    width: 350px;
+  }
+  .Title-login {
+    left: 35%;
+  }
+}
+@media (max-width: 400px) {
+  .div-login {
+    width: 300px;
+  }
+}
+
+/*Responsividade*/
