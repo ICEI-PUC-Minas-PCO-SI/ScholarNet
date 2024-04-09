@@ -1,9 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ScholarNet</title>
-  </head>
-  <body></body>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/index.css">
+  <title>Scholar Net</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg green-default-color">
+    <div class="container-fluid w-size d-flex justify-content-between">
+      <div class="d-flex flex-row">
+        <a class="navbar-brand me-0 fs-2 fw-bold text-light" href="#">ScholarNet</a>
+        <a class="navbar-brand" href="#">
+          <img class="img-fluid logo-image" src="./imgs/logo-image-white.png" alt="logo-image" width="30" height="24">
+        </a>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse flex-grow-0 fs-5 text-light" id="navbarTogglerDemo02">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 margin-iline-end-0 navbar-links gap-4 ">
+          <li class="nav-item">
+            <a class="nav-link active text-light hover-effect-btn" aria-current="page" href="#">Colaborador</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active text-light hover-effect-btn" aria-current="page" href="#">Sobre nós</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active text-light hover-effect-btn" aria-current="page" href="#">Perfil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active text-light hover-effect-btn" aria-current="page" href="#">FAQ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active text-light hover-effect-btn" aria-current="page" href="#">Publicar</a>
+          </li>
+        </ul>
+      </div>
+      <div class="d-flex flex-row align-items-center justify-content-center">
+        <a class="navbar-brand me-0  text-light hover-effect-btn" href="#">Log in | Sign in</a>
+      </div>
+    </nav>
+
+  <main>
+      <div class="container-fluid w-size mt-4">
+
+        <div class="input-group flex-nowrap">
+          <span class="input-group-text" id="addon-wrapping"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAASlJREFUSEvVlVESATEMhv+9CSfBSXASnAQnwUlwEvabSWaCtttZ9SAvtbttvvxJGp1+bN2P/asEmEhaSZpJmve/b/16lnSXdLDnwfhygK2kTeE0sGP/nX1FSwFOFjEHdxY1kaMIJawO5/2iRHgHkJK9yV+b89R5IATCShBZJRHA5qt5IyqiKxlqgJCubDAR4HmngByoMdSiOqsiAnwzzoHUmKvI1iICSA9pmta2oO3nHGni3Id9C8Dhw7wmWz6+9PasKbBH6l2XrVurIlcBxrYparJ1G3vRvHv8tlddNM+rtyvPSL+ES+fjIs4pOoi6sRa7KH4cGnYe+dJaNQsZGtekwsc1TnGEIk9JnElJSIs/nCKkBQBlEfIyaloBHEJKX+ZYS0ByOP4/4AkPvk0Z2oqyOwAAAABJRU5ErkJggg=="/></span>
+          <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+        </div>
+
+      </div>
+  </main>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script src="./js/index.js"></script>
+</body>
+
 </html>
