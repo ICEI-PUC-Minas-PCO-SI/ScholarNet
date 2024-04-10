@@ -47,15 +47,54 @@
       </div>
     </nav>
 
-  <main>
+  <main class="d-flex flex-column justify-content-center">
+    <div class="container-fluid w-size">
       <div class="container-fluid w-size mt-4">
 
         <div class="input-group flex-nowrap">
           <span class="input-group-text" id="addon-wrapping"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAASlJREFUSEvVlVESATEMhv+9CSfBSXASnAQnwUlwEvabSWaCtttZ9SAvtbttvvxJGp1+bN2P/asEmEhaSZpJmve/b/16lnSXdLDnwfhygK2kTeE0sGP/nX1FSwFOFjEHdxY1kaMIJawO5/2iRHgHkJK9yV+b89R5IATCShBZJRHA5qt5IyqiKxlqgJCubDAR4HmngByoMdSiOqsiAnwzzoHUmKvI1iICSA9pmta2oO3nHGni3Id9C8Dhw7wmWz6+9PasKbBH6l2XrVurIlcBxrYparJ1G3vRvHv8tlddNM+rtyvPSL+ES+fjIs4pOoi6sRa7KH4cGnYe+dJaNQsZGtekwsc1TnGEIk9JnElJSIs/nCKkBQBlEfIyaloBHEJKX+ZYS0ByOP4/4AkPvk0Z2oqyOwAAAABJRU5ErkJggg=="/></span>
-          <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+          <input type="text" class="form-control" placeholder="Pesquisar" aria-label="Username" aria-describedby="addon-wrapping">
         </div>
 
       </div>
+
+      <div id="carouselExample" class="carousel slide mt-5">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="d-flex gap-2 container-fluid justify-content-center">
+              <img src="./imgs/black.png" class="d-block img-fluid" alt="...">
+              <img src="./imgs/black.png" class="d-block img-fluid" alt="...">
+              <img src="./imgs/black.png" class="d-block img-fluid" alt="...">
+              <img src="./imgs/black.png" class="d-block img-fluid" alt="...">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="d-flex gap-2 container-fluid justify-content-center">
+              <img src="./imgs/black.png" class="d-block img-fluid" alt="...">
+              <img src="./imgs/black.png" class="d-block img-fluid" alt="...">
+              <img src="./imgs/black.png" class="d-block img-fluid" alt="...">
+              <img src="./imgs/black.png" class="d-block img-fluid" alt="...">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="d-flex gap-2 container-fluid justify-content-center">
+              <img src="./imgs/black.png" class="d-block img-fluid" alt="...">
+              <img src="./imgs/black.png" class="d-block img-fluid" alt="...">
+              <img src="./imgs/black.png" class="d-block img-fluid" alt="...">
+              <img src="./imgs/black.png" class="d-block img-fluid" alt="...">
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev justify-content-start" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span><img class="img-fluid z-1 carousel-arrow" src="./imgs/left.png" alt="left"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next justify-content-end" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span><img class="img-fluid z-1 carousel-arrow" src="./imgs/right.png" alt="right"></span>
+          <span class="visually-hidden">Next</span>
+        </button> 
+      </div>
+    </div>
   </main>
 
 
