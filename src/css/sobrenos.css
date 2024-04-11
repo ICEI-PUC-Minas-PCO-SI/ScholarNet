@@ -1,0 +1,214 @@
+@import url("./padroes.css");
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Euclid Circular A", Poppins;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: -250px 0%;
+}
+
+#containeir {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+}
+/*Botao Hover---------------------------------------------------------------------------------------------------------*/
+.btn-login button {
+  position: fixed;
+  left: 90%;
+  height: 50px;
+  border: 0;
+  padding: 0;
+  color: #f9f9f9;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.burger,
+.menu {
+  position: fixed;
+}
+
+.burger {
+  z-index: 4;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  width: 88px;
+  height: 88px;
+  background-image: url("../imgs/ButtonMenu.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+body.open .burger {
+  background-image: url("../imgs/ButtonClose.svg");
+  background-repeat: no-repeat;
+}
+
+.background {
+  position: fixed;
+  z-index: 2;
+  top: 24px;
+  aspect-ratio: 1 / 1;
+  translate: -50% -50%;
+  height: 48px;
+  background: rgba(193, 24, 24, 0);
+  border-radius: 50%;
+  transition: 0.6s;
+}
+
+body.open .background {
+  height: 300vmax;
+  background: rgb(0 0 0 / 80%);
+}
+
+.menu {
+  z-index: 3;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.05s;
+}
+
+.menu nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 100px;
+}
+
+body.open .menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+body .menu nav:hover > a {
+  opacity: 0.25;
+}
+
+body .menu nav > a:hover {
+  opacity: 1;
+  translate: 8px 0;
+}
+
+.menu a {
+  position: relative;
+  color: #f9f9f9;
+  font-size: 32px;
+  font-family: "Euclid Circular A";
+  padding: 20px 0 20px 20px;
+  text-decoration: none;
+  opacity: 0;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.menu a::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -26px;
+  translate: 0 -50%;
+  margin-top: 2px;
+  width: 10px;
+  height: 10px;
+  border-top: 3px solid #ffffff;
+  border-right: 3px solid #ffffff;
+  opacity: 0;
+  rotate: 45deg;
+  transition: 0.3s;
+}
+
+.menu a:hover::after {
+  opacity: 1;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    translate: -30px 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+body.open .menu a {
+  opacity: 1;
+  animation: appear 0.25s backwards;
+}
+/*Botao Hover---------------------------------------------------------------------------------------------------------*/
+/*Cabeçalho-----------------------------------------------------------------------------------------------------------*/
+#cabecalho {
+  display: flex;
+  width: 100%;
+  height: 7%;
+  background-color: var(--cor-cabecalho);
+}
+#cabecalho .logo-App {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 30%;
+  gap: 5px;
+  padding: 10px;
+}
+.logo-App .link-logo {
+  text-decoration: none;
+  color: #000;
+  font-family: var(--font-log);
+  font-size: var(--fontSize-log);
+}
+.logo-App #icon-App {
+  font-size: 25px;
+}
+.cabecalho-links {
+  display: flex;
+  padding-left: 50px;
+  justify-content: flex-start;
+  gap: 15px;
+  width: 60%;
+  height: 100%;
+  align-items: center;
+}
+.cabecalho-links .links-cabecalho {
+  text-decoration: none;
+  color: var(--cor-write);
+  font-size: var(--fontSize-cabecalho);
+}
+.btn-login {
+  display: flex;
+  width: 10%;
+  align-items: center;
+}
+.btn-login .link-login {
+  text-decoration: none;
+  color: var(--cor-write);
+  font-size: var(--fontSize-cabecalho);
+}
+/*Cabeçalho-----------------------------------------------------------------------------------------------------------*/
+/*Navegção------------------------------------------------------------------------------------------------------------*/
+
+/*Navegção------------------------------------------------------------------------------------------------------------*/
+/*Sessao-----------------------------------------------------------------------------------------------------------*/
+/*Sessao-----------------------------------------------------------------------------------------------------------*/
+/*Recursividade---------------------------------------------------------------------------------------------------*/
+@media (max-width: 650px) {
+  .btn-login .burger {
+    left: 80%;
+  }
+}
+/*Recursividade---------------------------------------------------------------------------------------------------*/
