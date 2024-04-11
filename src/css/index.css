@@ -7,6 +7,7 @@
 body {
     height: 100vh;
     width: 100%;
+    background-color: #2C5174;
 }
 
 .w-size {
@@ -61,4 +62,36 @@ body {
 .carousel-arrow {
     width: 40px;
     height: 60px;
+}
+
+.line {
+    height: 1px;
+    display: block;
+    width: 100% !important;
+    background-color: white;
+    border: 1px solid white;
+}
+
+.area {
+    height: 200px;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+.carousel_bg {
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+footer {
+    height: 180px;
+}
+
+footer ul a li:hover {
+    color: grey !important;
+    transition: all 0.5s
 }
