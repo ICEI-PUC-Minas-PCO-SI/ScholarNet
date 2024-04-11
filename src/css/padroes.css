@@ -1,0 +1,8 @@
+:root {
+  --cor-cabecalho: #1f441dbe;
+  --cor-sessao: rgba(145, 184, 214, 0.86);
+  --cor-write: #fff;
+  --font-logo: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  --fontSize-log: 1rem;
+  --fontSize-cabecalho: 1.5rem;
+}

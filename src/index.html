@@ -5,10 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/telaindex.css" />
     <link rel="shortcut icon" type="image/jpg" href="./imgs/Favicon.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.2.0/uicons-solid-straight/css/uicons-solid-straight.css"
+    />
+    <!--Link do Botao-->
+    <!--Link do Botao-->
 
     <title>ScholarNet</title>
   </head>
   <body>
-    <div id="containeir"></div>
+    <div id="containeir">
+      <header id="cabecalho">
+        <div class="logo-App">
+          <a class="link-logo" href="./index.html"><h1>ScholarNet</h1></a>
+          <i id="icon-App" class="fi fi-ss-graduation-cap"></i>
+        </div>
+
+        <div class="btn-login">
+          <button class="burger" onclick="toggleMenu()"></button>
+          <div class="background"></div>
+          <div class="shade"></div>
+          <div class="menu">
+            <nav>
+              <a style="animation-delay: 0.2s">Colaboradores</a>
+              <a style="animation-delay: 0.3s">Sobre</a>
+              <a style="animation-delay: 0.4s">Perfil</a>
+              <a style="animation-delay: 0.5s">FAQ</a>
+              <a style="animation-delay: 0.6s">Publicar</a>
+            </nav>
+          </div>
+        </div>
+      </header>
+      <nav id="navegacao"></nav>
+      <section id="sessao"></section>
+      <footer id="rodape"></footer>
+    </div>
+    <script type="text/javascript" defer>
+      const toggleMenu = () => document.body.classList.toggle("open");
+    </script>
   </body>
 </html>
