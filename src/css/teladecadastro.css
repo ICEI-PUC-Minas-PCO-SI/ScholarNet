@@ -1,3 +1,4 @@
+@import url("./padroes.css");
 * {
   padding: 0;
   margin: 0;
@@ -107,6 +108,19 @@ svg {
   font-size: 2rem;
   top: 13%;
   left: 67%;
+}
+
+.cadastro-educador {
+  position: absolute;
+  font-family: var(--font-logo);
+  color: var(--cor-write);
+  top: 58%;
+  left: 72%;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+.cadastro-educador:hover {
+  color: #00fa9a;
 }
 /*Incon-Email*/
 .gg-mail,
@@ -383,11 +397,22 @@ svg {
   .div-login {
     top: 50%;
   }
+  .Title-login {
+    top: 20%;
+  }
+  .cadastro-educador {
+    left: 73%;
+    top: 70%;
+  }
 }
 
 @media (max-width: 900px) {
   .Title-login {
-    top: 10%;
+    top: 20%;
+  }
+  .cadastro-educador {
+    top: 76%;
+    left: 61%;
   }
   .div-login {
     width: 400px;
@@ -409,6 +434,14 @@ svg {
 @media (max-width: 700px) {
   body {
     overflow: scroll;
+  }
+  .Title-login {
+    top: 35%;
+    left: 40%;
+  }
+  .cadastro-educador {
+    top: 63%;
+    left: 35%;
   }
   #container {
     display: flex;
@@ -439,10 +472,6 @@ svg {
     height: 500px;
     left: 50%;
     /* Estilos adicionais para estilizar a div como desejado */
-  }
-  .Title-login {
-    top: 30%;
-    left: 40%;
   }
 }
 @media (max-width: 525px) {

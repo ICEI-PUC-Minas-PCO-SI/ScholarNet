@@ -9,6 +9,8 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: -250px 0%;
+  overflow-x: hidden;
+  overflow: hidden;
 }
 
 #containeir {
@@ -200,15 +202,125 @@ body.open .menu a {
   font-size: var(--fontSize-cabecalho);
 }
 /*Cabeçalho-----------------------------------------------------------------------------------------------------------*/
-/*Navegção------------------------------------------------------------------------------------------------------------*/
 
-/*Navegção------------------------------------------------------------------------------------------------------------*/
 /*Sessao-----------------------------------------------------------------------------------------------------------*/
+#sessao {
+  padding: 20px;
+  display: grid;
+  flex-wrap: wrap;
+  background-color: var(--cor-sessao);
+  height: 100%;
+  grid-template-columns: 50% 50%;
+}
+#sessao #article {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 10px;
+}
+.title-SobreNos {
+  font-size: var(--fontSize-title);
+}
+#article .text-SobreNos {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 10px;
+}
+.imagens-SobreNos {
+  display: grid;
+  gap: 10px;
+  grid-template-areas:
+    "a a a c"
+    "b b b c";
+}
+.img-SobreNos {
+  width: 370px;
+  height: 130px;
+}
+.img-SobreNos3 {
+  width: 300px;
+  height: 270px;
+}
+#img-SobreNos1 {
+  grid-area: a;
+}
+#img-SobreNos2 {
+  grid-area: b;
+}
+#img-SobreNos3 {
+  grid-area: c;
+}
+#sessao #aside {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  gap: 30px;
+}
+.imagem-aside {
+  width: 500px;
+  height: 350px;
+}
+.aside-TextValores {
+  display: flex;
+  width: 100%;
+  gap: 20px;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.title-TextValores {
+  font-size: var(--fontSize-title);
+}
+.descri-TextValores {
+  font-size: var(--fontSize-padrao);
+}
+.descricao-SobreNos {
+  font-size: var(--fontSize-padrao);
+}
 /*Sessao-----------------------------------------------------------------------------------------------------------*/
 /*Recursividade---------------------------------------------------------------------------------------------------*/
-@media (max-width: 650px) {
-  .btn-login .burger {
-    left: 80%;
+@media (max-width: 1440px) {
+  body {
+    overflow: auto;
+  }
+  #containeir {
+    height: 100%;
+  }
+  .imagens-SobreNos {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .img-SobreNos {
+    height: 200px;
+    width: 100%;
+  }
+  #sessao #aside {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .aside-imagem {
+    width: 40%;
+  }
+  .aside-TextValores {
+    width: 50%;
+  }
+  #sessao {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    gap: 10px;
+  }
+}
+@media (max-width: 1200px) {
+  #sessao #aside {
+    display: flex;
+    flex-direction: column;
+  }
+  .aside-TextValores {
+    width: 100%;
   }
 }
 /*Recursividade---------------------------------------------------------------------------------------------------*/
