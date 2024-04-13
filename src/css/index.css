@@ -10,14 +10,8 @@ body {
     background-color: #2C5174;
 }
 
-@media screen and (min-width: 1000px) and (max-width:1200) {
-    .w-size {
-        width: 1000px;
-    }
-  } 
-
 .w-size {
-    width: 1200px;
+    max-width: 1200px;
 }
 
 .logo-image {
@@ -92,6 +86,9 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.btn-carousel {
+    width: 40px;
 }
 
 footer {
