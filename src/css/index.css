@@ -10,6 +10,12 @@ body {
     background-color: #2C5174;
 }
 
+@media screen and (min-width: 1000px) and (max-width:1200) {
+    .w-size {
+        width: 1000px;
+    }
+  } 
+
 .w-size {
     width: 1200px;
 }
@@ -64,18 +70,19 @@ body {
     height: 60px;
 }
 
-.line {
+/* .line {
     height: 1px;
     display: block;
-    width: 100% !important;
+    width: 100%;
     background-color: white;
     border: 1px solid white;
-}
+} */
 
 .area {
     height: 200px;
     border: 1px solid white;
     border-radius: 10px;
+    width: 300px;
 }
 
 .carousel_bg {
