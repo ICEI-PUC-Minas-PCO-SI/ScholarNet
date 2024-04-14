@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    background-color: #2C5174;
+    min-width: 300px;
+}
+
+.w-size {
+    max-width: 1200px;
+}
+
+.logo-image {
+    height: 40px;
+    width: 40px;
+}
+
+.navbar-links {
+    margin-inline-end: 0px !important;
+}
+
+.green-default-color {
+    background-color: #064F47;
+}
+
+
+.hover-effect-btn:after,
+.hover-effect-btn:before {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border: 1px solid rgba(255, 255, 255, 0);
+    bottom: 0px;
+    content: " ";
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    -webkit-transition: all 280ms ease-in-out;
+    transition: all 280ms ease-in-out;
+    width: 0;
+}
+
+.hover-effect-btn:hover:after,
+.hover-effect-btn:hover:before {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-color: #fff;
+    -webkit-transition: width 350ms ease-in-out;
+    transition: width 350ms ease-in-out;
+    width: 70%;
+}
+
+.hover-effect-btn:hover:before {
+    bottom: auto;
+    top: 0;
+    width: 70%;
+}
+
+.carousel-arrow {
+    width: 40px;
+    height: 60px;
+}
+
+.line {
+    height: 1px;
+    display: block;
+    width: 100%;
+    background-color: white;
+    border: 1px solid white;
+}
+
+.area {
+    height: 200px;
+    border: 1px solid white;
+    border-radius: 10px;
+    width: 280px;
+}
+
+.carousel_bg {
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.btn-carousel {
+    width: 40px;
+}
+
+footer {
+    height: 180px;
+}
+
+footer ul a li:hover {
+    color: grey !important;
+    transition: all 0.5s
+}
