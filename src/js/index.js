@@ -1,12 +1,13 @@
 //RESPONSIVIDADE - criando elementos no carrosel com base na largura da tela
 
-
 function carroselElements(){
 
     var larguraTela = window.innerWidth;
-    var carrosel = document.getElementById("carrosel-items")
+    var carrosel = document.querySelectorAll('.carousel-item')
 
-    carrosel.innerHTML = '';
+    carrosel[0].innerHTML = '';
+    carrosel[1].innerHTML = '';
+    carrosel[2].innerHTML = '';
     
     var qtdElementos;
 
@@ -20,52 +21,29 @@ function carroselElements(){
         qtdElementos = 2;
     }
     else{
-        larguraTela = 1;
+        qtdElementos = 1;
     }
 
-    for(let i = 0; i<3; i++){
-        
-        var slides = document.createElement('div');
-        slides.classList.add('d-flex', 'gap-2', 'container-fluid', 'justify-content-center');
-        slides.id = 'slide'
-        carrosel.appendChild(slides)
+    var contador = 0;
+    carrosel.forEach((i) => {
 
-        var slideArea = document.getElementById('slide')
+      var divContainer = document.createElement('div');
 
-        for(let j = 0; j<qtdElementos; j++){
-            var  slidesItems = document.createElement('img')
-            slidesItems.classList.add('d-block','img-fluid')
-            slideArea.appendChild(slidesItems)
+      divContainer.classList.add('d-flex', 'gap-2', 'container-fluid', 'justify-content-center');
+
+      for (let i = 0; i<qtdElementos; i++){
+          var img = document.createElement('img');
+          img.src = './imgs/black.png';
+          img.classList.add('d-block', 'img-fluid');
+          img.alt = '...';
+          divContainer.appendChild(img);
         }
 
-    }
+        carrosel[contador].appendChild(divContainer)
+        contador++;
+    });
 
 }
-
 window.onload = carroselElements
 window.onresize = carroselElements
 
-{/* <div class="carousel-item active">
-          <div class="d-flex gap-2 container-fluid justify-content-center">
-            <img src="./imgs/black.png" class="d-block img-fluid" alt="...">
-            <img src="./imgs/black.png" class="d-block img-fluid" alt="...">
-            <img src="./imgs/black.png" class="d-block img-fluid" alt="...">
-            <img src="./imgs/black.png" class="d-block img-fluid" alt="...">
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="d-flex gap-2 container-fluid justify-content-center">
-            <img src="./imgs/black.png" class="d-block img-fluid" alt="...">
-            <img src="./imgs/black.png" class="d-block img-fluid" alt="...">
-            <img src="./imgs/black.png" class="d-block img-fluid" alt="...">
-            <img src="./imgs/black.png" class="d-block img-fluid" alt="...">
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="d-flex gap-2 container-fluid justify-content-center">
-            <img src="./imgs/black.png" class="d-block img-fluid" alt="...">
-            <img src="./imgs/black.png" class="d-block img-fluid" alt="...">
-            <img src="./imgs/black.png" class="d-block img-fluid" alt="...">
-            <img src="./imgs/black.png" class="d-block img-fluid" alt="...">
-          </div>
-        </div> */}

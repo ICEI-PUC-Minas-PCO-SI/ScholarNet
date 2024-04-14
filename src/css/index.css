@@ -8,6 +8,7 @@ body {
     height: 100vh;
     width: 100%;
     background-color: #2C5174;
+    min-width: 300px;
 }
 
 .w-size {
@@ -64,19 +65,19 @@ body {
     height: 60px;
 }
 
-/* .line {
+.line {
     height: 1px;
     display: block;
     width: 100%;
     background-color: white;
     border: 1px solid white;
-} */
+}
 
 .area {
     height: 200px;
     border: 1px solid white;
     border-radius: 10px;
-    width: 300px;
+    width: 280px;
 }
 
 .carousel_bg {
