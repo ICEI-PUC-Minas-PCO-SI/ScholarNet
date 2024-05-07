@@ -285,7 +285,7 @@ svg {
     flex-direction: column;
     align-items: center;
     top: 80%;
-    right: 45%;
+    right: 47%;
   }
 }
 @media screen and (max-height: 930px) {
