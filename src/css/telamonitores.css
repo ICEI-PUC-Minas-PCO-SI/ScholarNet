@@ -7,7 +7,7 @@
 body {
     height: 100vh;
     width: 100%;
-    background-color: #2C5174;
+    background-color: #2C5174 !important;
     min-width: 300px;
 }
 
@@ -100,9 +100,11 @@ footer ul a li:hover {
     color: grey !important;
     transition: all 0.5s
 }
+
 .vertical-line {
-    border: 2px solid #fff; /* Cor e estilo da linha vertical */
+    background-color: white; /* Cor e estilo da linha vertical */
+    opacity: 1;
     height: 100%; /* Altura da linha vertical, ajuste conforme necessário */
-    margin: 0 40px; /* Espaçamento ao redor da linha vertical */
+    margin: 0 45px; /* Espaçamento ao redor da linha vertical */
     size: 10;
   }
