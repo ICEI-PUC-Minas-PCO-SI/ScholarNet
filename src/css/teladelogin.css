@@ -320,3 +320,7 @@ svg {
     right: 42%;
   }
 }
+.title-aplication {
+  text-decoration: none;
+  color: white;
+}
