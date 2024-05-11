@@ -3,265 +3,102 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  
-}
-#container {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-#container .div-top {
-  width: 100%;
-  height: 100%;
-  background-color: #1f441dbe;
-  opacity: 0.9;
-  display: flex;
-  flex-direction: column;
-  padding: 5px;
-  background: #043500;
 }
 
-svg {
-  top: 0;
-  left: 0;
+body {
+  min-height: 100vh;
   width: 100%;
-  height: 100vh;
-  box-sizing: border-box;
-  display: flex;
-
-  background-color: #d4e2fe;
-  background-image: linear-gradient(
-    to bottom,
-    rgba(145, 184, 214, 0.86),
-    #0e4166
-  );
+  background-image: linear-gradient(to bottom, #2C5174 60%, #D4E2FE );
+  min-width: 300px;
 }
-.span-title {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-.fi {
-  font-size: 25px;
-}
-.animateme {
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 50%;
-  overflow: hidden;
-  z-index: -1;
+main {
+  margin-top: 30px;
 }
 
-.bg-bubbles {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
+.w-size {
+  max-width: 1200px;
 }
-.bg-bubbles li {
-  position: absolute;
-  list-style: none;
+
+.logo-image {
+  height: 40px;
+  width: 40px;
+}
+
+.navbar-links {
+  margin-inline-end: 0px !important;
+}
+
+.green-default-color {
+  background-color: #064F47;
+}
+
+
+.hover-effect-btn:after,
+.hover-effect-btn:before {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border: 1px solid rgba(255, 255, 255, 0);
+  bottom: 0px;
+  content: " ";
   display: block;
-  width: 40px;
-  height: 40px;
-  background-image: url(../imgs/escudo-exclamacao.png);
-  background-size: 100%;
-  bottom: 60px;
-  -webkit-animation: square 25s infinite;
-  animation: square 25s infinite;
-  -webkit-transition-timing-function: linear;
-  transition-timing-function: linear;
-  opacity: 0;
+  margin: 0 auto;
+  position: relative;
+  -webkit-transition: all 280ms ease-in-out;
+  transition: all 280ms ease-in-out;
+  width: 0;
 }
 
-.bg-bubbles li:nth-child(1) {
-  left: 3%;
-  border-radius: 50em;
-  background-image: url(../imgs/escudo-exclamacao.png);
-  background-size: 100%;
-  border: none;
-}
-.bg-bubbles li:nth-child(2) {
-  left: 6%;
-  width: 75px;
-  height: 75px;
-  -webkit-animation-delay: 2s;
-  animation-delay: 2s;
-  -webkit-animation-duration: 17s;
-  animation-duration: 17s;
-}
-.bg-bubbles li:nth-child(3) {
-  left: 15%;
-  width: 175px;
-  height: 175px;
-  -webkit-animation-delay: 4s;
-  animation-delay: 4s;
-}
-.bg-bubbles li:nth-child(4) {
-  left: 40%;
-  width: 90px;
-  height: 90px;
-  -webkit-animation-duration: 22s;
-  animation-duration: 22s;
-}
-.bg-bubbles li:nth-child(5) {
-  left: 70%;
-  background-image: url(../imgs/usuario-do-circulo.png);
-  background-size: 100%;
-  border: none;
-}
-.bg-bubbles li:nth-child(6) {
-  left: 90%;
-  width: 90px;
-  height: 90px;
-  -webkit-animation-delay: 3s;
-  animation-delay: 3s;
-  border-radius: 50em;
-  background-image: url(../imgs/escudo-do-usuario.png);
-  background-size: 100%;
-  border: none;
-}
-.bg-bubbles li:nth-child(7) {
-  left: 32%;
-  width: 60px;
-  height: 60px;
-  -webkit-animation-delay: 7s;
-  animation-delay: 7s;
-  background-image: url(../imgs/usuario-do-circulo.png);
-  background-size: 100%;
-  border: none;
-}
-.bg-bubbles li:nth-child(8) {
-  left: 55%;
-  width: 50px;
-  height: 50px;
-  -webkit-animation-delay: 15s;
-  animation-delay: 15s;
-  -webkit-animation-duration: 40s;
-  animation-duration: 40s;
-}
-.bg-bubbles li:nth-child(9) {
-  left: 30%;
-  width: 140px;
-  height: 140px;
-  -webkit-animation-delay: 2s;
-  animation-delay: 2s;
-  -webkit-animation-duration: 40s;
-  animation-duration: 40s;
-  border-radius: 50em;
-  background-image: url(../imgs/escudo-exclamacao.png);
-  background-size: 100%;
-  border: none;
-}
-.bg-bubbles li:nth-child(10) {
-  left: 90%;
-  width: 60px;
-  height: 60px;
-  -webkit-animation-delay: 11s;
-  animation-delay: 11s;
-}
-.bg-bubbles li:nth-child(11) {
-  left: 10%;
-  width: 40px;
-  height: 40px;
-  -webkit-animation-delay: 13s;
-  animation-delay: 13s;
-  border-radius: 50em;
-}
-.bg-bubbles li:nth-child(12) {
-  left: 55%;
-  width: 175px;
-  height: 175px;
-  -webkit-animation-delay: 7s;
-  animation-delay: 7s;
-  background-image: url(../imgs/escudo-do-usuario.png);
-  background-size: 100%;
-  border: none;
+.hover-effect-btn:hover:after,
+.hover-effect-btn:hover:before {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-color: #fff;
+  -webkit-transition: width 350ms ease-in-out;
+  transition: width 350ms ease-in-out;
+  width: 70%;
 }
 
-.bg-bubbles li:nth-child(13) {
-  left: 65%;
-  width: 100px;
-  height: 100px;
-  -webkit-animation-delay: 8s;
-  animation-delay: 8s;
-  border-radius: 50em;
+.hover-effect-btn:hover:before {
+  bottom: auto;
+  top: 0;
+  width: 70%;
 }
 
-@-webkit-keyframes square {
-  0% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: translateY(-700px) rotate(600deg);
-    transform: translateY(-700px) rotate(600deg);
-    opacity: 1;
-  }
+.line {
+  height: 1px;
+  display: block;
+  width: 100%;
+  background-color: white;
+  border: 1px solid white;
 }
-@keyframes square {
-  0% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: translateY(-700px) rotate(600deg);
-    transform: translateY(-700px) rotate(600deg);
-    opacity: 0;
-  }
-}
+
 .section {
-  position: absolute;
-  top: 30%;
-  height: 40%;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-.section-container {
-  width: 25%;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: center;
-  background-color: rgba(145, 184, 214, 0.36);
-  padding: 20px;
-  border-radius: 50% 50% 100% 100%;
-}
-.camp-Title {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-#camp-BTNS {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  position: absolute;
-  top: 70%;
-}
-#camp-BTNS .btn:hover {
-  background-color: #043500;
-  color: var(--cor-write);
+  width: 400px;
+  height: 700px;
+  padding: 10px 30px 10px 30px;
+  background-image: linear-gradient(120deg, rgba(255,255,255,0.4), rgba(212,226,254,0.4));
+  border: 1px solid white;
+  border-radius: 30px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.camp-form label {
-  font-size: 1.2rem;
+.login, .form-label {
+  color: #064F47;
 }
 
-.title-aplication {
-  text-decoration: none;
+.btn {
+  width: 90px;
+}
+
+
+@media screen and (max-width: 575px) {
+  .section {
+    width: 280px;
+    height: 320px;
+    padding: 10px 30px 10px 30px;
+    background-image: linear-gradient(120deg, rgba(255,255,255,0.4), rgba(212,226,254,0.4));
+    border: 1px solid white;
+    border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
 }
