@@ -87,3 +87,14 @@ footer ul a li:hover {
 main{
     color: white;
 }
+
+.button:hover 
+{
+    background-color: #064F47 !important;
+    color: white !important;
+    transition: ease-in 0.2s !important;
+}
+
+.bg {
+    min-height: 100vh;
+}
