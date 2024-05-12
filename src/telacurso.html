@@ -4,10 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/normalize.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/telacurso.css">
-    <link rel="shortcut icon" type="image/jpg" href="./imgs/Favicon.png" />
+  <link rel="stylesheet" href="./css/telacurso.css">
+  <link rel="shortcut icon" type="image/jpg" href="./imgs/Favicon.png" />
   <title>Scholar Net</title>
 </head>
 
@@ -15,13 +16,14 @@
   <nav class="navbar navbar-expand-lg green-default-color border-bottom border-body">
     <div class="container-fluid w-size d-flex">
       <div class="d-flex flex-row">
-        <a class="navbar-brand me-0 fs-2 fw-bold text-light" href="#">ScholarNet</a>
+        <a class="navbar-brand me-0 fs-2 fw-bold text-light" href="./index.html">ScholarNet</a>
         <a class="navbar-brand" href="#">
           <img class="img-fluid logo-image" src="./imgs/logo-image-white.png" alt="logo-image" width="30" height="24">
         </a>
       </div>
-      <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
-        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+        aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse flex-grow-0 fs-5 text-light" id="navbarTogglerDemo02">
@@ -30,129 +32,139 @@
             <a class="nav-link active text-light hover-effect-btn" aria-current="page" href="#">Colaborador</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active text-light hover-effect-btn" aria-current="page" href="#">Sobre nós</a>
+            <a class="nav-link active text-light hover-effect-btn" aria-current="page" href="./sobrenos.html">Sobre nós</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active text-light hover-effect-btn" aria-current="page" href="#">Perfil</a>
+            <a class="nav-link active text-light hover-effect-btn" aria-current="page" href="./perfil.html">Perfil</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active text-light hover-effect-btn" aria-current="page" href="#">FAQ</a>
+            <a class="nav-link active text-light hover-effect-btn" aria-current="page" href="./faq.html">FAQ</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active text-light hover-effect-btn" aria-current="page" href="#">Publicar</a>
           </li>
           <li class="nav-item ms-lg-5">
-            <a class="nav-link active text-light hover-effect-btn" href="#">Log in | Sign in</a>
+            <a class="nav-link active text-light hover-effect-btn" href="./telalogin.html">Log in | Sign in</a>
           </li>
         </ul>
       </div>
   </nav>
-  <main id="main">
-    <div class=" w-100 w-size mt-5">
 
-      <div class="input-group flex-nowrap">
-        <span class="input-group-text" id="addon-wrapping"><img
-            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAASlJREFUSEvVlVESATEMhv+9CSfBSXASnAQnwUlwEvabSWaCtttZ9SAvtbttvvxJGp1+bN2P/asEmEhaSZpJmve/b/16lnSXdLDnwfhygK2kTeE0sGP/nX1FSwFOFjEHdxY1kaMIJawO5/2iRHgHkJK9yV+b89R5IATCShBZJRHA5qt5IyqiKxlqgJCubDAR4HmngByoMdSiOqsiAnwzzoHUmKvI1iICSA9pmta2oO3nHGni3Id9C8Dhw7wmWz6+9PasKbBH6l2XrVurIlcBxrYparJ1G3vRvHv8tlddNM+rtyvPSL+ES+fjIs4pOoi6sRa7KH4cGnYe+dJaNQsZGtekwsc1TnGEIk9JnElJSIs/nCKkBQBlEfIyaloBHEJKX+ZYS0ByOP4/4AkPvk0Z2oqyOwAAAABJRU5ErkJggg==" /></span>
-        <input type="text" class="form-control" placeholder="Pesquisar" aria-label="Username"
-          aria-describedby="addon-wrapping">
+  <main class="d-flex flex-column justify-content-center">
+    <div class="container-fluid w-size">
+      <div class=" w-100 w-size mt-5">
+
+        <div class="input-group flex-nowrap mb-5">
+          <span class="input-group-text" id="addon-wrapping"><img
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAASlJREFUSEvVlVESATEMhv+9CSfBSXASnAQnwUlwEvabSWaCtttZ9SAvtbttvvxJGp1+bN2P/asEmEhaSZpJmve/b/16lnSXdLDnwfhygK2kTeE0sGP/nX1FSwFOFjEHdxY1kaMIJawO5/2iRHgHkJK9yV+b89R5IATCShBZJRHA5qt5IyqiKxlqgJCubDAR4HmngByoMdSiOqsiAnwzzoHUmKvI1iICSA9pmta2oO3nHGni3Id9C8Dhw7wmWz6+9PasKbBH6l2XrVurIlcBxrYparJ1G3vRvHv8tlddNM+rtyvPSL+ES+fjIs4pOoi6sRa7KH4cGnYe+dJaNQsZGtekwsc1TnGEIk9JnElJSIs/nCKkBQBlEfIyaloBHEJKX+ZYS0ByOP4/4AkPvk0Z2oqyOwAAAABJRU5ErkJggg==" /></span>
+          <input type="text" class="form-control" placeholder="Pesquisar" aria-label="Username"
+            aria-describedby="addon-wrapping">
+        </div>
+
+
+        <section class="d-flex flex-column flex-md-row">
+          <div class="filtros d-flex flex-column">
+            <aside class="aside d-flex flex-column gap-3 ">
+              <h2 class="aside-Title-Filtro text-white">Filtros</h2>
+              <select class="form-select" aria-label="Default select example">
+                <option disabled selected>Ordenar por:</option>
+                <option value="1">Mais recente</option>
+                <option value="2">Mais bem avaliado</option>
+                <option value="3">Mais popular</option>
+              </select>
+              <select class="form-select" aria-label="Default select example">
+                <option disabled selected>Categoria:</option>
+                <option value="1">Iniciante</option>
+                <option value="2">Intermediário</option>
+                <option value="3">Avançado</option>
+              </select>
+              <select class="form-select" aria-label="Default select example">
+                <option disabled selected>Duração:</option>
+                <option value="1">Menos que 1 Hora</option>
+                <option value="2">Menos 5 Horas</option>
+                <option value="3">Mais de 5 horas</option>
+              </select>
+              <select class="form-select" aria-label="Default select example">
+                <option disabled selected>Idioma:</option>
+                <option value="1">Português</option>
+                <option value="2">Inglês</option>
+                <option value="3">Espanhol</option>
+              </select>
+            </aside>
+          </div>
+
+            <article class="article-Article">
+              <h2 class="title-Curso text-white">Curso</h2>
+              <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4 ">
+                <div class="col">
+                  <div class="card">
+                    <img src="./imgs/imagemCurso.jpg" class="card-imagem " alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                        additional content. This content is a little bit longer.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col bg-sucesso">
+                  <div class="card">
+                    <img src="./imgs/imagemCurso.jpg" class="card-imagem " alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                        additional content. This content is a little bit longer.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card">
+                    <img src="./imgs/imagemCurso.jpg" class="card-imagem " alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                        additional content.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card">
+                    <img src="./imgs/imagemCurso.jpg" class="card-imagem " alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                        additional content. This content is a little bit longer.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card">
+                    <img src="./imgs/imagemCurso.jpg" class="card-imagem " alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                        additional content. This content is a little bit longer.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card">
+                    <img src="./imgs/imagemCurso.jpg" class="card-imagem" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                        additional content. This content is a little bit longer.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article> 
+
+        </section>
       </div>
-
     </div>
   </main>
-  <section id="sessao">
-    <article class="sessao-Article">
-      <aside class="article-aside">
-        <h2 class="aside-Title-Filtro">Filtros</h2>
-        <select class="form-select" aria-label="Default select example">
-          <option selected>Ordenar por:</option>
-          <option value="1">Mais recente</option>
-          <option value="2">Mais bem avaliado</option>
-          <option value="3">Mais popular</option>
-        </select>
-        <select class="form-select" aria-label="Default select example">
-          <option selected>Categoria:</option>
-          <option value="1">Iniciante</option>
-          <option value="2">Intermediário</option>
-          <option value="3">Avançado</option>
-        </select>
-        <select class="form-select" aria-label="Default select example">
-          <option selected>Duração:</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
-        </select>
-        <select class="form-select" aria-label="Default select example">
-          <option selected>Idioma:</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
-        </select>
-      </aside>
-      <article class="article-Article ">
-        <h2 class="title-Curso">Curso</h2>
-        <div class="row row-cols-1 row-cols-md-3 g-4 ">
-          <div class="col">
-            <div class="card   ">
-              <img src="./imgs/imagemCurso.jpg" class="card-imagem " alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col bg-sucesso">
-            <div class="card ">
-              <img src="./imgs/imagemCurso.jpg" class="card-imagem " alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <img src="./imgs/imagemCurso.jpg" class="card-imagem " alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <img src="./imgs/imagemCurso.jpg" class="card-imagem " alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <img src="./imgs/imagemCurso.jpg" class="card-imagem " alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <img src="./imgs/imagemCurso.jpg" class="card-imagem" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
-    
-    </article>
-  </section>
 
 
-  
 
 
 
