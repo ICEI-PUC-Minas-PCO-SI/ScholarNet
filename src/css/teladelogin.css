@@ -235,7 +235,7 @@ svg {
   display: flex;
   border-radius: 50px;
   flex-direction: column;
-  width: 25%;
+  width: 45%;
   height: 100%;
   padding: 20px;
   background-color: rgba(145, 184, 214, 0.36);
@@ -249,11 +249,37 @@ svg {
 .a-LinkEnviar {
   text-decoration: none;
 }
+
 #btn:hover {
   background-color: #043500;
 }
+.camp-TEL {
+  width: 100%;
+}
+#camp-TEL-CPF {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+}
+.camp-ADRESS {
+  width: 100%;
+}
 .camp-Form label {
   font-size: 1.2rem;
+}
+#camp-SENHA {
+  display: flex;
+  margin-top: 20px;
+  align-items: center;
+  gap: 10px;
+
+  width: 100%;
+}
+#camp-SENHA .senha {
+  width: 100%;
+}
+#camp-SENHA .repetir-Senha {
+  width: 100%;
 }
 .camp-BTNS {
   display: flex;
