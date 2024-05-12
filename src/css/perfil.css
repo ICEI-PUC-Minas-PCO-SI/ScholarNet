@@ -1,0 +1,223 @@
+/* CSS atualizado */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  background-color: #2C5174;
+  min-width: 300px;
+}
+
+.w-size {
+  max-width: 1200px;
+}
+
+.logo-image {
+  height: 40px;
+  width: 40px;
+}
+
+.navbar-links {
+  margin-inline-end: 0px !important;
+}
+
+.green-default-color {
+  background-color: #064F47;
+}
+
+
+.hover-effect-btn:after,
+.hover-effect-btn:before {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border: 1px solid rgba(255, 255, 255, 0);
+  bottom: 0px;
+  content: " ";
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  -webkit-transition: all 280ms ease-in-out;
+  transition: all 280ms ease-in-out;
+  width: 0;
+}
+
+.hover-effect-btn:hover:after,
+.hover-effect-btn:hover:before {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-color: #fff;
+  -webkit-transition: width 350ms ease-in-out;
+  transition: width 350ms ease-in-out;
+  width: 70%;
+}
+
+.hover-effect-btn:hover:before {
+  bottom: auto;
+  top: 0;
+  width: 70%;
+}
+.line {
+  height: 1px;
+  display: block;
+  width: 100%;
+  background-color: white;
+  border: 1px solid white;
+}
+
+body::-webkit-scrollbar {
+  display: none; /* para Chrome, Safari e Opera */
+}
+
+.navbar {
+  background-color: #064f47;
+  color: #fff;
+  padding: 15px;
+}
+
+.navbar .logo h1 {
+  margin: 0;
+}
+
+.navbar .nav-toggle {
+  display: none;
+}
+
+.navbar .Navegacao-Links ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.navbar .Navegacao-Links ul li {
+  display: inline;
+  margin-right: 10px;
+}
+
+
+.Foto-Container {
+  max-width: 300px; 
+  margin: 0 auto; 
+  text-align: center; 
+}
+
+/*foto do usuário */
+.Usuario-Foto {
+  width: 200px; 
+  height: 200px;
+  border-radius: 50%; 
+}
+
+/*ícone do usuário sem foto */
+#avatar {
+  display: none; 
+  font-size: 100px;
+  color: gray; 
+}
+
+
+.nome-user h1 {
+  text-align: center; 
+  color: #fff;
+}
+
+/* Ícone de câmera */
+.Icone {
+  margin-top: 10px; 
+}
+
+
+.Icone i {
+  font-size: 24px; 
+  color: #333; 
+  cursor: pointer; 
+}
+
+
+
+.detalhe-Perfil {
+  margin: 0 auto;
+  max-width: 600px;
+  text-align: center; 
+}
+.detalhe-Perfil ul {
+  list-style-type: none; 
+  padding: 0; 
+}
+
+
+.detalhes-Perfil-Container {
+  background-color: #064f47;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+
+/* Estilos para o campo de descrição */
+.Descricao-usuario {
+  margin: 0 auto; 
+  max-width: 600px; 
+  text-align: center;
+  padding: 20px; 
+  background: #064f47; 
+  color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+  margin-top: 20px; 
+}
+
+.Descricao-usuario textarea {
+  width: 100%; 
+  box-sizing: border-box; 
+}
+
+.Config-Perfil {
+  text-align: center;
+  padding: 20px;
+}
+
+.Config-Perfil button {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  background: #333;
+  color: #064f47;
+  cursor: pointer;
+   color: #fff; 
+}
+.Config-Perfil button:hover {
+    background-color: #064f47;
+    color: white;
+}
+
+.services-Usuário {
+  background: #064f47;
+  color: #fff;  
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+
+
+.services-Prestados,
+.services-Contratados {
+  padding: 20px;
+  color: #fff;
+  margin: 0; 
+}
+
+.services-Prestados {
+    border-right: 2px solid white;
+}
+
+@media screen and (max-width: 575px) {
+  .services-Prestados {
+    border-right: none;
+    border-bottom: 2px solid white;
+}
+}
