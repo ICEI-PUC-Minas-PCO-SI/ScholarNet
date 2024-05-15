@@ -11,12 +11,12 @@ fetch("http://localhost:3009/alunoData", {
   });
 
 const alunoData = {
-  cpfAluno: 1002200001,
-  nomeAluno: "Fulano de Tal",
-  email: "fulano@example.com",
-  senha: "senha123",
+  cpfAluno: 1999999911,
+  nomeAluno: "Elder Vieira Rosa",
+  email: "elderluiz0@example.com",
+  senha: "senha123323",
   telefone: 123456789,
-  matricula: 2024001,
+  matricula: 2024041,
 };
 /*Metodo POST para criar um novo usuaro/Aluno */
 fetch("http://localhost:3009/post/alunoData", {
