@@ -8,7 +8,7 @@
 body {
   min-height: 100vh;
   width: 100%;
-  background-image: linear-gradient(to bottom, #2c5174 60%, #d4e2fe);
+  background-image: linear-gradient(to bottom, #2C5174 60%, #D4E2FE );
   min-width: 300px;
 }
 main {
@@ -29,8 +29,9 @@ main {
 }
 
 .green-default-color {
-  background-color: #064f47;
+  background-color: #064F47;
 }
+
 
 .hover-effect-btn:after,
 .hover-effect-btn:before {
@@ -72,102 +73,30 @@ main {
 }
 
 .section {
-  position: absolute;
-  top: 20%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  height: 70%;
-  padding: 20px;
-}
-.containeir-cadastro {
-  display: flex;
-  border-radius: 50px;
-  flex-direction: column;
-  width: 45%;
-  height: 100%;
-  padding: 20px;
-  background-color: rgba(145, 184, 214, 0.36);
-}
-.camp-Title {
-  width: 100%;
-  display: flex;
-  color: var(--cor-write);
-  justify-content: center;
-}
-.a-LinkEnviar {
-  text-decoration: none;
-}
-
-#btn:hover {
-  background-color: #043500;
-}
-.camp-TEL {
-  width: 100%;
-}
-#camp-TEL-CPF {
-  display: flex;
-  width: 100%;
-  gap: 10px;
-}
-.camp-ADRESS {
-  width: 100%;
-}
-.camp-Form label {
-  font-size: 1.2rem;
-}
-#camp-SENHA {
-  display: flex;
-  margin-top: 20px;
-  align-items: center;
-  gap: 10px;
-
-  width: 100%;
-}
-#camp-SENHA .senha {
-  width: 100%;
-}
-#camp-SENHA .repetir-Senha {
-  width: 100%;
-}
-.camp-BTNS {
-  display: flex;
-  gap: 20px;
-  position: absolute;
-  top: 80%;
-  right: 46%;
   width: 400px;
   height: 400px;
   padding: 10px 30px 10px 30px;
-  background-image: linear-gradient(
-    120deg,
-    rgba(255, 255, 255, 0.4),
-    rgba(212, 226, 254, 0.4)
-  );
+  background-image: linear-gradient(120deg, rgba(255,255,255,0.4), rgba(212,226,254,0.4));
   border: 1px solid white;
   border-radius: 30px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.login,
-.form-label {
-  color: #064f47;
+.login, .form-label {
+  color: #064F47;
 }
 
 .btn {
   width: 90px;
 }
 
+
 @media screen and (max-width: 575px) {
   .section {
     width: 280px;
     height: 320px;
     padding: 10px 30px 10px 30px;
-    background-image: linear-gradient(
-      120deg,
-      rgba(255, 255, 255, 0.4),
-      rgba(212, 226, 254, 0.4)
-    );
+    background-image: linear-gradient(120deg, rgba(255,255,255,0.4), rgba(212,226,254,0.4));
     border: 1px solid white;
     border-radius: 30px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;

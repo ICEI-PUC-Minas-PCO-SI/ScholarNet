@@ -52,12 +52,12 @@ var aluno = document.getElementById("aluno");
 var educador = document.getElementById("educador");
 
 btnToEducador.addEventListener('click', function(){
-    educador.className = "section d-flex flex-column"
-    aluno.className = "section d-none flex-column"
+    educador.className = "d-flex flex-column justify-content-center align-items-center"
+    aluno.className = "d-none flex-column justify-content-center align-items-center"
 })
 
 btnToAluno.addEventListener('click', function(){
-  educador.className = "section d-none flex-column"
-  aluno.className = "section d-flex flex-column"
+  aluno.className = "d-flex flex-column justify-content-center align-items-center"
+  educador.className = "d-none flex-column justify-content-center align-items-center"
 })
 
