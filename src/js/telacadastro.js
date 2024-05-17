@@ -38,3 +38,26 @@ fetch("http://localhost:3009/post/alunoData", {
   .catch((error) => {
     console.error("Erro:", error);
   });
+
+
+
+
+//Switch de cadastros
+
+var btnToAluno = document.getElementById("educadorToAluno");
+var btnToEducador = document.getElementById("alunoToEducador");
+
+console.log(btnToEducador)
+var aluno = document.getElementById("aluno");
+var educador = document.getElementById("educador");
+
+btnToEducador.addEventListener('click', function(){
+    educador.className = "section d-flex flex-column"
+    aluno.className = "section d-none flex-column"
+})
+
+btnToAluno.addEventListener('click', function(){
+  educador.className = "section d-none flex-column"
+  aluno.className = "section d-flex flex-column"
+})
+
