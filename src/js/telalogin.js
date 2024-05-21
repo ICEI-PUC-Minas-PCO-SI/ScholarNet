@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
       throw error;
     }
   }
-
   async function getBackDadosALunos() {
     try {
       const response = await fetch("http://localhost:3009/alunoData", {
@@ -56,18 +55,25 @@ function conferirUser(user) {
 }
 
 function UserTrue() {
+  let effectIcon = document.querySelector(".camp-Effect");
+  let effectSection = document.querySelector(".section");
   let campoMatricula = document.getElementById("inputMatricula");
   let campoSenha = document.getElementById("inputPassword");
 
   campoMatricula.style.border = "1.7px solid green";
   campoMatricula.style.color = "green";
   campoSenha.style.border = "1.7px solid green";
-  campoSenha.style.border = "green";
+  campoSenha.style.backgroundColor = "rgba(255, 0, 0, 0.2)";
+  effectIcon.style.display = "block";
+  effectSection.style["boxShadow"] = "0px 0px 10px 10px green";
   setTimeout(() => {
     campoMatricula.style.border = "none";
-    campoMatricula.style.color = "none";
+    campoMatricula.style.color = "";
     campoSenha.style.border = "none";
-    campoSenha.style.color = "";
+    effectSection.style.display = "none";
+    effectIcon.style.display = "";
+    effectSection.style["boxShadow"] = "";
+    window.location.href = "../index.html";
   }, 4000);
 }
 function UserFalseSenha() {
