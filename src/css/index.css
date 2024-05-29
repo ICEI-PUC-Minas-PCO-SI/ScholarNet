@@ -7,7 +7,7 @@
 body {
     height: 100vh;
     width: 100%;
-    background-color: rgb(245, 245, 245);
+    background-color: #2c5174;
     min-width: 300px;
 }
 
@@ -69,8 +69,8 @@ body {
     height: 1px;
     display: block;
     width: 100%;
-    background-color: black;
-    border: 1px solid black;
+    background-color: white;
+    border: 1px solid white;
 }
 footer .line {
     height: 1px;
@@ -82,12 +82,13 @@ footer .line {
 
 .area {
     height: 200px;
-    border: 1px solid black;
+    border: 4px solid black;
     border-radius: 30px;
     width: 280px;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: rgb(243, 243, 243);
 
 }
 
@@ -112,8 +113,8 @@ footer ul a li:hover {
     transition: all 0.5s
 }
 .area:hover {
-    border:1px solid #ACD4F7;
-    box-shadow: 2px 2px 4px #ACD4F7;
+    border:1px solid black;
+    box-shadow: 2px 2px 4px black;
     cursor: pointer;
     transition: ease-in 0.1s;
 }

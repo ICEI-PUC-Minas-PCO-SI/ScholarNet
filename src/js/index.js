@@ -31,13 +31,17 @@ function carroselElements(){
 
       divContainer.classList.add('d-flex', 'gap-2', 'container-fluid', 'justify-content-center');
 
-      for (let i = 0; i<qtdElementos; i++){
+      /*for (let i = 0; i<qtdElementos; i++){
           var img = document.createElement('img');
           img.src = './imgs/black.png';
           img.classList.add('d-block', 'img-fluid');
           img.alt = '...';
           divContainer.appendChild(img);
-        }
+        }*/
+
+        //Implementando o design dos cursos
+
+        
 
         carrosel[contador].appendChild(divContainer)
         contador++;
