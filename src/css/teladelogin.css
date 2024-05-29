@@ -8,7 +8,7 @@
 body {
   min-height: 100vh;
   width: 100%;
-  background-image: linear-gradient(to bottom, #2C5174 60%, #D4E2FE );
+  background-image: linear-gradient(to bottom, #2c5174 60%, #d4e2fe);
   min-width: 300px;
 }
 main {
@@ -29,9 +29,8 @@ main {
 }
 
 .green-default-color {
-  background-color: #064F47;
+  background-color: #064f47;
 }
-
 
 .hover-effect-btn:after,
 .hover-effect-btn:before {
@@ -76,27 +75,62 @@ main {
   width: 400px;
   height: 400px;
   padding: 10px 30px 10px 30px;
-  background-image: linear-gradient(120deg, rgba(255,255,255,0.4), rgba(212,226,254,0.4));
+  background-image: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.4),
+    rgba(212, 226, 254, 0.4)
+  );
   border: 1px solid white;
   border-radius: 30px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.login, .form-label {
-  color: #064F47;
+.login,
+.form-label {
+  color: #064f47;
 }
 
 .btn {
   width: 90px;
 }
-
+/*Icon Effect-----------------------------------*/
+.camp-Effect {
+  display: none;
+  margin-top: 10px;
+}
+.span-Effect {
+  display: flex;
+  gap: 5px;
+}
+.msg-Effect {
+  color: var(--cor-Black);
+  font-size: var(--fontSize-padrao);
+}
+.effect {
+  width: 30px;
+  height: 30px;
+  border: 7px solid;
+  border-radius: 50%;
+  border-color: #00ff00 #000 #000 #000;
+  animation: rotate 1.5s linear infinite;
+}
+@keyframes rotate {
+  to {
+    transform: rotate(365deg);
+  }
+}
+/*Icon Effect-----------------------------------*/
 
 @media screen and (max-width: 575px) {
   .section {
     width: 280px;
     height: 320px;
     padding: 10px 30px 10px 30px;
-    background-image: linear-gradient(120deg, rgba(255,255,255,0.4), rgba(212,226,254,0.4));
+    background-image: linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0.4),
+      rgba(212, 226, 254, 0.4)
+    );
     border: 1px solid white;
     border-radius: 30px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
