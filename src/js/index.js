@@ -31,16 +31,24 @@ function carroselElements(){
 
       divContainer.classList.add('d-flex', 'gap-2', 'container-fluid', 'justify-content-center');
 
-      /*for (let i = 0; i<qtdElementos; i++){
-          var img = document.createElement('img');
-          img.src = './imgs/black.png';
-          img.classList.add('d-block', 'img-fluid');
-          img.alt = '...';
-          divContainer.appendChild(img);
-        }*/
+        for (let i = 0; i<qtdElementos; i++){
 
-        //Implementando o design dos cursos
+            var curso = document.createElement("div")
+            curso.style.border = "1px solid black"
+            curso.style.width = "fit-content"
+            if(larguraTela >1200){
+            curso.style.minWidth = "260px"
+            }
+            else if(larguraTela > 850){
+                curso.style.minWidth = "240px"
+            }
+            else{
+                curso.style.minWidth = "220px"
+            }
+            curso.style.height = "150px"
 
+            divContainer.appendChild(curso)
+        }
         
 
         carrosel[contador].appendChild(divContainer)

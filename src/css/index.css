@@ -82,7 +82,7 @@ footer .line {
 
 .area {
     height: 200px;
-    border: 4px solid black;
+    border: 2px solid black;
     border-radius: 30px;
     width: 280px;
     display: flex;
@@ -113,8 +113,7 @@ footer ul a li:hover {
     transition: all 0.5s
 }
 .area:hover {
-    border:1px solid black;
-    box-shadow: 2px 2px 4px black;
+    border: 2px solid lightblue;
     cursor: pointer;
     transition: ease-in 0.1s;
 }
