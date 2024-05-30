@@ -1,4 +1,8 @@
-//RESPONSIVIDADE - criando elementos no carrosel com base na largura da tela
+const URL = ``
+
+
+
+//RESPONSIVIDADE - criando elementos no carrosel com base na largura da tela]
 
 function carroselElements(){
 

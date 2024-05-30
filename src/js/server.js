@@ -1,4 +1,5 @@
 const express = require("express");
+
 const {
   allAluno,
   allEducador,
@@ -25,7 +26,6 @@ let educadorData;
 let instituicaoData;
 let cursoData;
 let aulaData;
-
 let postAluno;
 
 /*Metodos Gets --------------------------------------------------- */
@@ -51,7 +51,7 @@ app.get("/educadorData", async (req, res) => {
 app.get("/instituicaoData", async (req, res) => {
   try {
     instituicaoData = await allInstituicao();
-    return res.status(201).json({ educadorData });
+    return res.status(201).json({ instituicaoData });
   } catch (error) {
     console.error("Erro ao buscar itens:", error);
     return res.status(500).json({ error: "Erro internoo do servidor" });
@@ -60,7 +60,7 @@ app.get("/instituicaoData", async (req, res) => {
 app.get("/cursoData", async (req, res) => {
   try {
     cursoData = await allCurso();
-    return res.status(201).json({ educadorData });
+    return res.status(201).json({ cursoData });
   } catch (error) {
     console.error("Erro ao buscar itens:", error);
     return res.status(500).json({ error: "Erro internoo do servidor" });
@@ -69,7 +69,7 @@ app.get("/cursoData", async (req, res) => {
 app.get("/aulaData", async (req, res) => {
   try {
     aulaData = await allAula();
-    return res.status(201).json({ educadorData });
+    return res.status(201).json({ aulaData });
   } catch (error) {
     console.error("Erro ao buscar itens:", error);
     return res.status(500).json({ error: "Erro internoo do servidor" });

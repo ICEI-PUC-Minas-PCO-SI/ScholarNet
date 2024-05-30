@@ -1,28 +1,28 @@
 const connection = require("./connection");
 
 const allAluno = async () => {
-  const [query] = await connection.execute("SELECT * FROM schoolarnet.aluno");
+  const [query] = await connection.execute("SELECT * FROM scholarnet.aluno");
   return query;
 };
 const allEducador = async () => {
   const [query] = await connection.execute(
-    "select * from schoolarnet.profissionaleducador"
+    "select * from scholarnet.profissionaleducador"
   );
   return query;
 };
 const allInstituicao = async () => {
   const [query] = await connection.execute(
-    "SELECT * FROM schoolarnet.instituicaoensino;"
+    "SELECT * FROM scholarnet.instituicaoensino;"
   );
   return query;
 };
 const allCurso = async () => {
-  const [query] = await connection.execute("SELECT * FROM schoolarnet.curso;");
+  const [query] = await connection.execute("SELECT * FROM scholarnet.curso;");
   return query;
 };
 
 const allAula = async () => {
-  const [query] = await connection.execute("SELECT * FROM schoolarnet.aula;");
+  const [query] = await connection.execute("SELECT * FROM scholarnet.aula;");
   return query;
 };
 
