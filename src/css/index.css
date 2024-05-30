@@ -118,3 +118,9 @@ footer ul a li:hover {
     transition: ease-in 0.1s;
 }
 
+.cursoBox:hover {
+    border: 2px solid lightblue !important;
+    cursor: pointer;
+    transition: ease-in 0.1s;
+}
+
