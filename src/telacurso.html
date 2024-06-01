@@ -13,6 +13,7 @@
 </head>
 
 <body>
+  <div class="bg d-flex flex-column justify-content-between">
   <nav class="navbar navbar-expand-lg green-default-color border-bottom border-body">
     <div class="container-fluid w-size d-flex">
       <div class="d-flex flex-row">
@@ -57,7 +58,7 @@
         <div class="input-group flex-nowrap mb-5">
           <span class="input-group-text" id="addon-wrapping"><img
               src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAASlJREFUSEvVlVESATEMhv+9CSfBSXASnAQnwUlwEvabSWaCtttZ9SAvtbttvvxJGp1+bN2P/asEmEhaSZpJmve/b/16lnSXdLDnwfhygK2kTeE0sGP/nX1FSwFOFjEHdxY1kaMIJawO5/2iRHgHkJK9yV+b89R5IATCShBZJRHA5qt5IyqiKxlqgJCubDAR4HmngByoMdSiOqsiAnwzzoHUmKvI1iICSA9pmta2oO3nHGni3Id9C8Dhw7wmWz6+9PasKbBH6l2XrVurIlcBxrYparJ1G3vRvHv8tlddNM+rtyvPSL+ES+fjIs4pOoi6sRa7KH4cGnYe+dJaNQsZGtekwsc1TnGEIk9JnElJSIs/nCKkBQBlEfIyaloBHEJKX+ZYS0ByOP4/4AkPvk0Z2oqyOwAAAABJRU5ErkJggg==" /></span>
-          <input type="text" class="form-control" placeholder="Pesquisar" aria-label="Username"
+          <input type="text" class="form-control" id="search" placeholder="Pesquisar" aria-label="Username"
             aria-describedby="addon-wrapping">
         </div>
 
@@ -96,75 +97,14 @@
             <article class="article-Article">
               <h2 class="title-Curso text-white">Curso</h2>
               <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4" id="cursos-grid">
-                <!-- <div class="col">
-                  <div class="card">
-                    <img src="./imgs/imagemCurso.jpg" class="card-imagem " alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                        additional content. This content is a little bit longer.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card">
-                    <img src="./imgs/imagemCurso.jpg" class="card-imagem " alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                        additional content. This content is a little bit longer.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card">
-                    <img src="./imgs/imagemCurso.jpg" class="card-imagem " alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                        additional content.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card">
-                    <img src="./imgs/imagemCurso.jpg" class="card-imagem " alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                        additional content. This content is a little bit longer.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card">
-                    <img src="./imgs/imagemCurso.jpg" class="card-imagem " alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                        additional content. This content is a little bit longer.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card">
-                    <img src="./imgs/imagemCurso.jpg" class="card-imagem" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                        additional content. This content is a little bit longer.</p>
-                    </div>
-                  </div>
-                </div> -->
+
               </div>
               
             </article> 
           </section>
 
           <div class="text-white d-flex flex-row justify-content-end align-items-center" id="paginacao">
-              <!-- <p id="prev" class="me-3">Anterior</p>
-              <p class=" fw-bold ">1</p>
-              <p id="prox" class="ms-3">Proxima</p> -->
+
           </div>
       
       </div>
@@ -210,11 +150,12 @@
   </footer>
 
 
-
+</div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
   <script src="./js/cursos.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 </body>
 
 </html>

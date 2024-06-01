@@ -10,6 +10,9 @@ body {
   width: 100%;
   background-color: #2c5174;
   min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .w-size {
@@ -182,4 +185,8 @@ footer ul a li:hover {
 
 #paginacao {
   height: 30px;
+}
+
+.bg {
+  min-height: 100vh;
 }
