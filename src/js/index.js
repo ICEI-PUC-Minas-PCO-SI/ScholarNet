@@ -22,7 +22,6 @@ fetch('http://localhost:3009/cursoData', {
             return Array.from(numerosUnicos);
         }
         
-        num = gerarNumerosAleatorio(0, qtdCursos -1, qtdCursos -1)
         
         function carroselElements() {
             
@@ -50,7 +49,7 @@ fetch('http://localhost:3009/cursoData', {
             
             var contador = 0;
             carrosel.forEach((i) => {
-                
+                num = gerarNumerosAleatorio(0, qtdCursos -1, qtdCursos -1)
                 
                 var divContainer = document.createElement('div');
                 

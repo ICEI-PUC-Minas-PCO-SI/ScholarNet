@@ -140,11 +140,12 @@ footer ul a li:hover {
 }
 .card {
   border-radius: 20px;
-  min-height: 477px;
+  min-height: 400px;
+  border: 2px solid black;
 }
-.card-imagem {
-  border-radius: 20px;
-  width: 100%;
+.card:hover {
+  border: 2px solid lightblue;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 767px) {
@@ -160,4 +161,25 @@ footer ul a li:hover {
   .aside {
     min-width: 250px;
   }
+}
+
+.page-item {
+  height: 100%;
+  margin: 0 5px;
+  padding: 5px 5px;
+  border: 1px solid #ddd;
+}
+
+.page-item.active {
+  background-color: white;
+  color: black !important;
+  border-color: white;
+}
+.page-item:hover {
+  cursor: pointer;
+  border: 1px solid lightblue;
+}
+
+#paginacao {
+  height: 30px;
 }
