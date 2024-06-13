@@ -35,7 +35,7 @@ const allPostAluno = async (
   matricula
 ) => {
   const [query] = await connection.execute(
-    "INSERT INTO aluno (cpfAluno, nomeAluno, email, senha, telefone,matricula) VALUES (?, ?, ?, ?, ?,?)",
+    "INSERT INTO Aluno (cpfAluno, nomeAluno, email, senha, telefone,matricula) VALUES (?, ?, ?, ?, ?,?)",
     [cpfAluno, nomeAluno, email, senha, telefone, matricula]
   );
   return query;

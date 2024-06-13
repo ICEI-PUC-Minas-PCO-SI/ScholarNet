@@ -48,7 +48,7 @@ function conferirUser(user) {
     UserTrue();
   } else if (statusMatricula == true) {
     UserFalseSenha();
-    alert("Senha incorreto");
+    alert("Senha incorreta");
   } else {
     alert("Usuario não encontrado");
   }

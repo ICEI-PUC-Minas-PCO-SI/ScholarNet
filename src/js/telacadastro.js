@@ -1,4 +1,3 @@
-/*Metodo GET para receber dados do Aluno */
 fetch("http://localhost:3009/alunoData", {
   method: "GET",
 })
@@ -10,21 +9,25 @@ fetch("http://localhost:3009/alunoData", {
     console.error("Erro ao fazer a solicitação:", error);
   });
 
-const alunoData = {
-  cpfAluno: 1999999911,
-  nomeAluno: "Elder Vieira Rosa",
-  email: "elderluiz0@example.com",
-  senha: "senha123323",
-  telefone: 123456789,
-  matricula: 2024041,
+var alunoDados = {
+  cpfAluno: "",
+  nomeAluno: "",
+  email: "",
+  senha: "",
+  telefone: "",
+  matricula: "",
 };
+
 /*Metodo POST para criar um novo usuaro/Aluno */
-fetch("http://localhost:3009/post/alunoData", {
+
+function cadastrar(){
+
+fetch("http://localhost:3009/alunoData", {
   method: "POST",
   headers: {
     "Content-Type": "application/json",
   },
-  body: JSON.stringify(alunoData),
+  body: JSON.stringify(alunoDados),
 })
   .then((response) => {
     if (!response.ok) {
@@ -40,14 +43,21 @@ fetch("http://localhost:3009/post/alunoData", {
   });
 
 
+}
 
+
+function validarCadastro(){
+
+//  if(/*TUDO OK*/){
+// cadastrar()
+// }
+}
 
 //Switch de cadastros
 
 var btnToAluno = document.getElementById("educadorToAluno");
 var btnToEducador = document.getElementById("alunoToEducador");
 
-console.log(btnToEducador)
 var aluno = document.getElementById("aluno");
 var educador = document.getElementById("educador");
 
