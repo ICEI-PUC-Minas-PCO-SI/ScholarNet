@@ -28,7 +28,6 @@ body {
     background-color: #064F47;
 }
 
-
 .hover-effect-btn:after,
 .hover-effect-btn:before {
     -webkit-backface-visibility: hidden;
@@ -81,15 +80,14 @@ footer {
 
 footer ul a li:hover {
     color: grey !important;
-    transition: all 0.5s
+    transition: all 0.5s;
 }
 
-main{
+main {
     color: white;
 }
 
-.button:hover 
-{
+.button:hover {
     background-color: #064F47 !important;
     color: white !important;
     transition: ease-in 0.2s !important;
@@ -98,3 +96,46 @@ main{
 .bg {
     min-height: 100vh;
 }
+
+.table th:nth-child(2) {
+    width: 60%;
+}
+
+.table th:nth-child(3) {
+    width: 20%;
+}
+
+.table td,
+.table th {
+    vertical-align: middle;
+}
+
+.btn-custom {
+    background-color: #333;
+    color: white;
+    transition: background-color 0.2s ease-in;
+}
+
+.btn-edit:hover {
+    background-color: #064F47 !important;
+}
+
+.btn-delete:hover {
+    background-color: #ff0000 !important;
+}
+
+.btn-warning,
+.btn-danger {
+    transition: background-color 0.2s ease-in;
+}
+
+.btn-warning:hover,
+.btn-danger:hover {
+    background-color: #064F47 !important;
+    color: white !important;
+}
+
+th{
+    background-color: #064F47 !important;
+}
+
