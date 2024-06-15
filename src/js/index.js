@@ -3,8 +3,7 @@ fetch('http://localhost:3009/cursoData', {
 })
     .then((res) => res.json())
     .then((data) => {
-
-        cursoDados = data.cursoData
+        cursoDados = data
         qtdCursos = cursoDados.length
         
         function gerarNumerosAleatorio(min, max, contador) {
