@@ -8,17 +8,18 @@ document.addEventListener('DOMContentLoaded', () => {
         fetch('http://localhost:3009/cursoData', {
             method: 'GET',
         })
-        .then((res) => res.json())
-        .then((data) => {
-            cursoDados = data.cursoData;
-            filteredCursos = cursoDados;
-            displayProducts(pagAtual);
-            setupPagination();
-        })
-        .catch((err) => {
-            console.log('Ocorreu algum erro');
-            console.log(err);
-        });
+            .then((res) => res.json())
+            .then((data) => {
+                cursoDados = data;
+                filteredCursos = cursoDados;
+                displayProducts(pagAtual);
+                setupPagination();
+                setBarraPesquisa();
+            })
+            .catch((err) => {
+                console.log('Ocorreu algum erro');
+                console.log(err);
+            });
     }
 
     function displayProducts(page) {
@@ -52,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const paginacao = document.getElementById('paginacao');
         paginacao.innerHTML = '';
         const pageCount = Math.ceil(filteredCursos.length / cursoPerPage);
-        
+
         for (let i = 1; i <= pageCount; i++) {
             const pageItem = document.createElement('div');
             pageItem.className = 'page-item';
@@ -69,9 +70,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    document.getElementById('search').addEventListener('input', function() {
+    document.getElementById('search').addEventListener('input', function () {
         const query = this.value.toLowerCase();
-        filteredCursos = cursoDados.filter(curso => 
+        filteredCursos = cursoDados.filter(curso =>
             curso.NomeCurso.toLowerCase().includes(query) ||
             curso.MaterialEstudo.toLowerCase().includes(query) ||
             curso.AreaConhecimento.toLowerCase().includes(query) ||
@@ -85,6 +86,20 @@ document.addEventListener('DOMContentLoaded', () => {
         setupPagination();
     });
 
+    function getParametrosQuery(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+    }
+
+    function setBarraPesquisa() {
+        const buttonName = getParametrosQuery("name");
+        if (buttonName) {
+            const searchInput = document.getElementById("search");
+            searchInput.value = buttonName;
+            const event = new Event('input', { bubbles: true });
+            searchInput.dispatchEvent(event);  
+        }
+    }
 
     fetchCursos();
 });

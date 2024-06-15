@@ -99,3 +99,16 @@ fetch('http://localhost:3009/cursoData', {
         console.log(err)
     })
     
+
+    var areas = document.getElementsByClassName("x")
+    for(let i = 0; i< areas.length; i++){
+        areas[i].addEventListener('click', ()=>{
+
+            let name = areas[i].childNodes[1].name;
+            window.location.href = `telacurso.html?name=${name}`;
+
+        })
+    }
+    
+    
+    // console.log(areas[0])
