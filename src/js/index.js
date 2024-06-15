@@ -72,10 +72,11 @@ fetch('http://localhost:3009/cursoData', {
                     curso.style.height = "150px"
                     curso.style.borderRadius = "20px"
                     curso.style.padding = "10px"
-                    curso.className = "cursoBox"
+                    curso.className = "cursoBox x"
+                    curso.name = cursoDados[num[i]].NomeCurso
                     
                     curso.innerHTML = `         
-                    <h5 class="text-primary">${cursoDados[num[i]].NomeCurso}</h5>
+                    <h5 class="text-primary fs-6">${cursoDados[num[i]].NomeCurso}</h5>
                     <p class="m-0 p-0"><strong>Área: </strong>${cursoDados[num[i]].AreaConhecimento}</p>
                     <p class="m-0 p-0"><strong>Carga Horaria: </strong>${cursoDados[num[i]].CargaHoraria} Horas</p>
                     <p class="m-0 p-0"><strong>Preço: </strong> R$${cursoDados[num[i]].Preco}</p>
@@ -90,9 +91,11 @@ fetch('http://localhost:3009/cursoData', {
             });
             
         }
+        var areas = document.getElementsByClassName("x")
         window.onload = carroselElements
         window.onresize = carroselElements
         carroselElements()
+        addEvento(areas)
     })
     .catch((err) => {
         console.log("Erro ao buscar dados dos cursos")
@@ -100,15 +103,18 @@ fetch('http://localhost:3009/cursoData', {
     })
     
 
-    var areas = document.getElementsByClassName("x")
+
+function addEvento(areas){
     for(let i = 0; i< areas.length; i++){
         areas[i].addEventListener('click', ()=>{
 
             let name = areas[i].childNodes[1].name;
+            if(name == undefined){
+                name = areas[i].name
+            }
             window.location.href = `telacurso.html?name=${name}`;
 
         })
     }
+}
     
-    
-    // console.log(areas[0])
