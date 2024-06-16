@@ -19,42 +19,37 @@ async function getAllAluno() {
 
 // Cria um novo aluno
 async function createAluno(
-  cpfAluno,
-  nomeAluno,
-  email,
-  senha,
-  telefone,
-  matricula,
+  CPF,
+  Nome,
+  Email,
+  Senha,
+  Telefone
 ) {
   return await Aluno.create({
-    cpfAluno,
-    nomeAluno,
-    email,
-    senha,
-    telefone,
-    matricula,
+    CPF,
+    Nome,
+    Email,
+    Senha,
+    Telefone
   });
 }
 
 // Atualiza um aluno
 async function updateAluno(
-  id,
-  cpfAluno,
-  nomeAluno,
-  email,
-  senha,
-  telefone,
-  matricula,
+  CPF,
+  Nome,
+  Email,
+  Senha,
+  Telefone
 ) {
   const aluno = await Aluno.findByPk(id);
   if (!aluno) throw new Error("Aluno não foi encontrado");
   return await aluno.update({
-    cpfAluno,
-    nomeAluno,
-    email,
-    senha,
-    telefone,
-    matricula,
+    CPF,
+    Nome,
+    Email,
+    Senha,
+    Telefone
   });
 }
 
@@ -78,42 +73,37 @@ async function getAllEducador() {
 
 // Cria um novo professor
 async function createEducador(
-  cpfProfessor,
-  nomeProfessor,
-  email,
-  senha,
-  telefone,
-  matricula,
+  CPF,
+  Nome,
+  Email,
+  Senha,
+  Telefone
 ) {
   return await Professor.create({
-    cpfProfessor,
-    nomeProfessor,
-    email,
-    senha,
-    telefone,
-    matricula,
+    CPF,
+    Nome,
+    Email,
+    Senha,
+    Telefone
   });
 }
 
 // Atualiza um professor
 async function updateEducador(
-  id,
-  cpfProfessor,
-  nomeProfessor,
-  email,
-  senha,
-  telefone,
-  matricula,
+  CPF,
+  Nome,
+  Email,
+  Senha,
+  Telefone
 ) {
   const educador = await Professor.findByPk(id);
   if (!educador) throw new Error("Professor não foi encontrado");
   return await educador.update({
-    cpfProfessor,
-    nomeProfessor,
-    email,
-    senha,
-    telefone,
-    matricula,
+    CPF,
+    Nome,
+    Email,
+    Senha,
+    Telefone
   });
 }
 

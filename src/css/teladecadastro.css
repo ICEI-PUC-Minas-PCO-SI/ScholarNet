@@ -102,3 +102,27 @@ main {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
 }
+
+#error {
+  display: none;
+}
+
+#error-senha {
+  display: none;
+}
+
+#error-email {
+  display: none;
+}
+
+#error2 {
+  display: none;
+}
+
+#error-senha2 {
+  display: none;
+}
+
+#error-email2 {
+  display: none;
+}

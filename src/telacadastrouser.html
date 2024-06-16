@@ -38,7 +38,6 @@
   </nav>
 
   <main id="aluno" class="d-flex flex-column justify-content-center align-items-center">
-
     <section class="section d-flex flex-column">
       <div class="section-container h-100 d-flex flex-column align-items-center">
 
@@ -47,109 +46,108 @@
         </span>
 
         <span id="camp-Login" class="camp-form my-4 w-100">
-          <label class="form-label fw-bold" for="">Nome</label>
-          <input class="form-control" id="inputMatricula" type="text" placeholder="Digite seu nome"
-            aria-label="default input example" />
-          <label for="inputSobrenome" class="form-label mt-2 fw-bold">CPF</label>
-          <input type="text" placeholder="Digite seu CPF" id="inputSobrenome" class="form-control"
-            aria-describedby="passwordHelpBlock" />
+          <label class="form-label fw-bold" for="inputNome">Nome</label>
+          <input class="form-control" id="inputNome" type="text" placeholder="Digite seu nome" aria-label="default input example" />
+          
+          <label for="inputCPF" class="form-label mt-2 fw-bold">CPF</label>
+          <input type="text" placeholder="Digite seu CPF" id="inputCPF" class="form-control" aria-describedby="passwordHelpBlock" />
 
-          <label for="inputPassword" class="form-label mt-2 fw-bold">E-Mail</label>
-          <input type="email" placeholder="Digite seu E-Mail" id="inputEmail" class="form-control"
-            aria-describedby="passwordHelpBlock" />
+          <label for="inputEmail" class="form-label mt-2 fw-bold">E-Mail</label>
+          <input type="e-mail" placeholder="Digite seu E-Mail" id="inputEmail" class="form-control" aria-describedby="passwordHelpBlock" />
 
-          <label for="inputPassword" class="form-label mt-2 fw-bold">Telefone</label>
-          <input type="tel" placeholder="Digite seu telefone" id="inputTel" class="form-control"
-            aria-describedby="passwordHelpBlock" />
-
+          <label for="inputTel" class="form-label mt-2 fw-bold">Telefone</label>
+          <input type="tel" placeholder="(00) 0 0000-0000" id="inputTel" class="form-control" aria-describedby="passwordHelpBlock" />
 
           <label for="inputPassword" class="form-label mt-2 fw-bold">Senha</label>
-          <input type="password" placeholder="Digite sua senha" id="inputPassword" class="form-control"
-            aria-describedby="passwordHelpBlock" />
+          <input type="password" placeholder="Digite sua senha" id="inputPassword" class="form-control" aria-describedby="passwordHelpBlock" />
 
-          <label for="inputPassword" class="form-label mt-2 fw-bold">Confirmar Senha</label>
-          <input type="password" placeholder="Repita sua senha" id="inputConfPassword" class="form-control"
-            aria-describedby="passwordHelpBlock" />
+          <label for="inputConfPassword" class="form-label mt-2 fw-bold">Confirmar Senha</label>
+          <input type="password" placeholder="Repita sua senha" id="inputConfPassword" class="form-control" aria-describedby="passwordHelpBlock" />
 
         </span>
 
-        <span id="camp-BTNS" class="camp-form mt-0 mt-sm-5 d-flex justify-content-evenly w-100">
+        <div class="m-0 text-danger fw-bold" id="error">
+            <p>Preencha todos os campos para continuar</p>
+        </div>
+        <div class="m-0 text-danger fw-bold" id="error-senha">
+          <p>As senhas não coincidem.</p>
+      </div>
+      <div class="m-0 text-danger fw-bold" id="error-email">
+        <p>Insira um e-mail válido</p>
+      </div>
+
+        <span id="camp-BTNS" class="camp-form mt-0 mt-sm-4 d-flex justify-content-evenly w-100">
           <div>
-            <button type="btn btn-sm" class="btn btn-light" id="cadastroAluno">Cadastrar</button>
+            <button type="button" class="btn btn-light" id="cadastroAluno" onclick="cadastrarAluno()">Cadastrar</button>
           </div>
 
           <div>
-            <a href="./telalogin.html"><button type="btn" class="btn btn-light">Voltar</button></a>
+            <a href="./telalogin.html"><button type="button" class="btn btn-light">Voltar</button></a>
           </div>
 
           <div>
-            <button id="alunoToEducador" type="btn" class="btn btn-light">Educador</button>
+            <button id="alunoToEducador" type="button" class="btn btn-light">Educador</button>
           </div>
-
         </span>
     </section>
   </main>
 
+
+
+
+
   <main id="educador" class="d-none flex-column justify-content-center align-items-center">
     <section class="section d-flex flex-column">
-
-      <div class="section-container h-100 d-flex flex-column ">
-
-      <span class="camp-form text-center" id="camp-Title">
-        <h1 class="login">Cadastro Educador</h1>
-      </span>
-
-      <span id="camp-Login" class="camp-form w-100">
-        <label class="fw-bold form-label" for="">Nome</label>
-        <input class="form-control" id="camp-NAME" type="text" placeholder="Nome" aria-label="default input example" />
-        <label class="fw-bold form-label" for="">Sobrenome</label>
-        <input class="form-control" type="text" id="camp-LASTNAME" placeholder="Sobrenome"
-          aria-label="default input example" />
-      </span>
-      <span id="camp-TEL-CPF"class="camp-form">
-        <div class="camp-ADRESS">
-          <label for="exampleFormControlInput1" class="form-label fw-bold">E-Mail</label>
-          <input id="email" type="text" class="form-control" placeholder="name@example.com" />
-        </div>
-        <div class="camp-TEL">
-          <label for="inputPassword5" class="form-label fw-bold">Telefone</label>
-          <input type="tel" id="camp-TELEFONE" class="form-control" aria-describedby="passwordHelpBlock"
-            placeholder="(00) 9 0000-0000" />
-        </div>
-      </span>
-      <span class="camp-form">
-        <div class="camp-CPF">
-          <label class="fw-bold form-label" for="">CPF</label>
-          <input class="form-control w-50" type="text" placeholder="000.000.000-00"
-            aria-label="default input example" />
-        </div>
-      </span>
-      <span id="camp-SENHA" class="camp-form">
-        <div class="senha">
-          <label for="inputPassword5" class="form-label fw-bold">Senha</label>
-          <input type="password" id="inputPassword2" class="form-control" aria-describedby="passwordHelpBlock" />
-        </div>
-        <div class="repetir-Senha">
-          <label for="inputPassword5" class="form-label fw-bold">Repetir senha</label>
-          <input type="password" id="inputConfPassword2" class="form-control" aria-describedby="passwordHelpBlock" />
-        </div>
-      </span>
+      <div class="section-container h-100 d-flex flex-column align-items-center">
       
-      <span id="camp-BTNS" class="camp-form mt-0 mt-sm-5 d-flex justify-content-evenly w-100">
-        <div>
-          <button type="btn btn-sm" class="btn btn-light" id="cadastroEducador">Cadastrar</button>
-        </div>
+        <span class="camp-form text-center" id="camp-Title2">
+          <h1 class="login">Cadastro Educador</h1>
+        </span>
+  
+        <span id="camp-Login" class="camp-form my-4 w-100">
+          <label class="form-label fw-bold" for="inputNome">Nome</label>
+          <input class="form-control" id="inputNome1" type="text" placeholder="Digite seu nome" aria-label="default input example" />
+          
+          <label for="inputCPF" class="form-label mt-2 fw-bold">CPF</label>
+          <input type="text" placeholder="Digite seu CPF" id="inputCPF1" class="form-control" aria-describedby="passwordHelpBlock" />
 
-        <div>
-          <a href="./telalogin.html"><button type="btn" class="btn btn-light">Voltar</button></a>
-        </div>
+          <label for="inputEmail" class="form-label mt-2 fw-bold">E-Mail</label>
+          <input type="e-mail" placeholder="Digite seu E-Mail" id="inputEmail1" class="form-control" aria-describedby="passwordHelpBlock" />
 
-        <div>
-          <button id="educadorToAluno"  type="btn" class="btn btn-light">Aluno</button>
-        </div>
+          <label for="inputTel" class="form-label mt-2 fw-bold">Telefone</label>
+          <input type="tel" placeholder="(00) 0 0000-0000" id="inputTel1" class="form-control" aria-describedby="passwordHelpBlock" />
 
-      </span>
-      </div>
+          <label for="inputPassword" class="form-label mt-2 fw-bold">Senha</label>
+          <input type="password" placeholder="Digite sua senha" id="inputPassword1" class="form-control" aria-describedby="passwordHelpBlock" />
+
+          <label for="inputConfPassword" class="form-label mt-2 fw-bold">Confirmar Senha</label>
+          <input type="password" placeholder="Repita sua senha" id="inputConfPassword1" class="form-control" aria-describedby="passwordHelpBlock" />
+
+        </span>
+  
+        <div class="m-0 text-danger fw-bold" id="error2">
+            <p>Preencha todos os campos para continuar</p>
+        </div>
+        <div class="m-0 text-danger fw-bold" id="error-senha2">
+          <p>As senhas não coincidem.</p>
+        </div>
+        <div class="m-0 text-danger fw-bold" id="error-email2">
+          <p>Insira um e-mail válido</p>
+        </div>
+  
+        <span id="camp-BTNS2" class="camp-form mt-0 mt-sm-4 d-flex justify-content-evenly w-100">
+          <div>
+            <button type="button" class="btn btn-light" id="cadastroEducador" onclick="cadastrarEducador()">Cadastrar</button>
+          </div>
+  
+          <div>
+            <a href="./telalogin.html"><button type="button" class="btn btn-light">Voltar</button></a>
+          </div>
+  
+          <div>
+            <button id="educadorToAluno" type="button" class="btn btn-light">Aluno</button>
+          </div>
+        </span>
     </section>
   </main>
 
@@ -158,6 +156,7 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
     <script src="./js/telacadastro.js"></script>
+
 </body>
 
 </html>

@@ -2,33 +2,23 @@ const { Sequelize, DataTypes } = require("sequelize");
 const sequelize = require("../connection");
 
 const Aluno = sequelize.define("Aluno", {
-  cpfAluno: {
+  CPF: {
     type: DataTypes.STRING,
-    allowNull: false,
     unique: true,
     primaryKey: true
   },
-  nomeAluno: {
+  Nome: {
     type: DataTypes.STRING,
-    allowNull: false,
   },
-  email: {
+  Email: {
     type: DataTypes.INTEGER,
-    allowNull: false,
     unique: true,
   },
-  senha: {
+  Senha: {
     type: DataTypes.STRING,
-    allowNull: false,
   },
-  telefone: {
+  Telefone: {
     type: DataTypes.STRING,
-    allowNull: true,
-  },
-  matricula: {
-    type: DataTypes.STRING,
-    allowNull: true,
-    unique: true,
   }
 },
 {
