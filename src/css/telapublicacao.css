@@ -135,7 +135,37 @@ main {
     color: white !important;
 }
 
-th{
-    background-color: #064F47 !important;
+.modal{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
+.box-modal-erro {
+    margin-top: 150px;
+    width: 350px;
+    height: 250px;
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 30px;
+    padding: 20px;
+    color: black;
+}
+
+.box-modal-sucesso {
+    margin-top: 150px;
+    width: 350px;
+    height: 160px;
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 30px;
+    padding: 20px;
+    color: black;
+}

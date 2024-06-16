@@ -1,119 +1,138 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const aulas = [];
 
-    const form = document.querySelector("#form-aula");
-    const tituloInput = document.getElementById("titulo");
-    const descricaoInput = document.getElementById("descricao");
-    const videoLinkInput = document.getElementById("video-link");
-    const tipoMateriaSelect = document.getElementById("tipo-materia");
-    const aulasTbody = document.getElementById("aulas-tbody");
-    const submitButton = document.getElementById("submit-button");
 
-    videoLinkInput.addEventListener("input", (event) => {
-        const videoLink = event.target.value;
-        document.getElementById("video-preview").src = videoLink;
-    });
+var campos = {
+    Titulo: document.getElementById("titulo"),
+    Material: document.getElementById("material"),
+    Video: document.getElementById("video-link"),
+    Carga: document.getElementById("carga"),
+    Area: document.getElementById("area"),
+    Descricao: document.getElementById("descricao")
+}
 
-    form.addEventListener("submit", (event) => {
-        event.preventDefault();
+function postarCurso() {
 
-        const titulo = tituloInput.value;
-        const descricao = descricaoInput.value;
-        const videoLink = videoLinkInput.value;
-        const tipoMateria = tipoMateriaSelect.value;
+    let titulo = campos.Titulo.value;
+    let material = campos.Material.value;
+    let video = campos.Video.value;
+    let carga = campos.Carga.value;
+    let area = campos.Area.value;
+    let descricao = campos.Descricao.value;
 
-        if (!titulo || !descricao || !videoLink || !tipoMateria) {
-            alert("Por favor, preencha todos os campos.");
-            return;
-        }
+    let dados = {
+        NomeCurso: titulo,
+        MaterialEstudo: material,
+        Video: video,
+        CargaHoraria: carga,
+        AreaConhecimento: area,
+        Descricao: descricao
+    };
 
-        const aula = { id: Date.now(), titulo, descricao, videoLink, tipoMateria };
-        aulas.push(aula);
-        renderAulas();
-        form.reset();
-    });
-
-    submitButton.addEventListener("click", (event) => {
-        event.preventDefault();
-
-        const titulo = tituloInput.value;
-        const descricao = descricaoInput.value;
-        const videoLink = videoLinkInput.value;
-        const tipoMateria = tipoMateriaSelect.value;
-
-        if (!titulo || !descricao || !videoLink || !tipoMateria) {
-            alert("Por favor, preencha todos os campos.");
-            return;
-        }
-
-        const aula = { id: Date.now(), titulo, descricao, videoLink, tipoMateria };
-        aulas.push(aula);
-        renderAulas();
-
-        tituloInput.value = "";
-        descricaoInput.value = "";
-        videoLinkInput.value = "";
-        tipoMateriaSelect.value = "";
-        document.getElementById("video-preview").src = "https://ralfvanveen.com/wp-content/uploads/2021/06/Placeholder-_-Glossary.svg";
-    });
-
-    const renderAulas = () => {
-        aulasTbody.innerHTML = "";
-        aulas.forEach((aula) => {
-            const tr = document.createElement("tr");
-
-            const tituloTd = document.createElement("td");
-            tituloTd.textContent = limitarTexto(aula.titulo, 15);
-            tr.appendChild(tituloTd);
-
-            const descricaoTd = document.createElement("td");
-            descricaoTd.textContent = limitarTexto(aula.descricao, 100); 
-            tr.appendChild(descricaoTd);
-
-            const tipoMateriaTd = document.createElement("td");
-            tipoMateriaTd.textContent = aula.tipoMateria;
-            tr.appendChild(tipoMateriaTd);
-
-            const actionsTd = document.createElement("td");
-
-            const editButton = document.createElement("button");
-            editButton.textContent = "Editar";
-            editButton.className = "btn btn-sm me-2 btn-custom btn-edit";
-            editButton.addEventListener("click", () => editAula(aula.id));
-            actionsTd.appendChild(editButton);
-
-            const deleteButton = document.createElement("button");
-            deleteButton.textContent = "Excluir";
-            deleteButton.className = "btn btn-sm btn-custom btn-delete";
-            deleteButton.addEventListener("click", () => deleteAula(aula.id));
-            actionsTd.appendChild(deleteButton);
-
-            tr.appendChild(actionsTd);
-            aulasTbody.appendChild(tr);
+    fetch("http://localhost:3009/post/cursoData", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(dados)
+    })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Erro ao criar curso");
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log(data.message);
+        })
+        .catch(error => {
+            console.error("Erro:", error);
         });
-    };
 
-    const editAula = (id) => {
-        const aula = aulas.find((aula) => aula.id === id);
-        tituloInput.value = aula.titulo;
-        descricaoInput.value = aula.descricao;
-        videoLinkInput.value = aula.videoLink;
-        tipoMateriaSelect.value = aula.tipoMateria;
-        document.getElementById("video-preview").src = aula.videoLink;
-        deleteAula(id);
-    };
+    var modalSucesso = document.getElementById("modalSucesso")
 
-    const deleteAula = (id) => {
-        const index = aulas.findIndex((aula) => aula.id === id);
-        if (index !== -1) {
-            aulas.splice(index, 1);
-            renderAulas();
+    modalSucesso.style.display = "flex";
+
+    var btnFecharSucesso = document.getElementById("btnFecharSucesso")
+    
+        btnFecharSucesso.addEventListener("click", () => {
+        modalSucesso.style.display = "none"
+        window.location.href = "index.html";
+    })
+}
+
+
+
+function validarEntradas() {
+
+    var faltando = []
+    let titulo = campos.Titulo.value
+    let material = campos.Material.value
+    let video = campos.Video.value
+    let carga = campos.Carga.value
+    let area = campos.Area.value
+    let descricao = campos.Descricao.value
+
+    if (titulo === "") {
+        faltando.push("titulo")
+    }
+    if (material === "") {
+        faltando.push("material")
+    }
+    if (video === "") {
+        faltando.push("video")
+    }
+    if (carga === "") {
+        faltando.push("carga")
+    }
+    if (area === "nulo") {
+        faltando.push("area")
+    }
+    if (descricao === "") {
+        faltando.push("descricao")
+    }
+
+    var modalErro = document.getElementById("modalErro")
+    var boxModalErro = document.getElementById("box-modal-Erro")
+    var texto = "";
+
+    if (faltando.length >= 1) {
+        for (let i = 0; i < faltando.length; i++) {
+            texto += faltando[i] + " | "
         }
-    };
 
-    const limitarTexto = (texto, limite) => {
-        return texto.length > limite ? texto.substring(0, limite) + "..." : texto;
-    };
+        var auxText = document.createElement("p")
+        auxText.innerText = "Campos Faltando : " + texto
 
-});
+        boxModalErro.appendChild(auxText)
+
+        modalErro.style.display = "flex";
+
+    }
+    var btnFecharErro = document.getElementById("btnFecharErro")
+
+    btnFecharErro.addEventListener("click", () => {
+        modalErro.style.display = "none"
+        boxModalErro.innerText = ""
+    })
+
+
+    if (faltando.length <= 0) {
+        postarCurso()
+    }
+}
+
+var video = document.getElementById("video-preview")
+
+function atualizarVideo() {
+    if (campos.Video.value.length < 30) {
+        return;
+    }
+    video.src = campos.Video.value
+}
+
+campos.Video.addEventListener("input", atualizarVideo)
+
+
+var btn = document.getElementById("submit-button")
+
+btn.addEventListener("click", validarEntradas)
 

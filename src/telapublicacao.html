@@ -54,7 +54,7 @@
         </div>
     </nav>
 
-    <main class="container mt-5">
+    <main class="container mt-5" id="main">
       <div class="row d-flex align-items-center">
         <div class="col-lg-5 mb-4">
           <div>
@@ -74,17 +74,31 @@
                 <input type="text" class="form-control" id="titulo" placeholder="Insira o título">
               </div>
               <div class="mb-3">
-                <h5>Inserir link do vídeo</h5>
+                <h5>Material de Estudo</h5>
+                <input type="text" class="form-control" id="material" placeholder="Insira o os Materiais">
+              </div>
+              <div class="mb-3">
+              <div class="mb-3">
+                <h5>Inserir link do vídeo (Precisa ser o link Embed)</h5>
                 <input type="text" class="form-control" id="video-link" placeholder="Insira o link do vídeo">
               </div>
               <div class="mb-3">
-                <h5>Escolha o tipo de matéria</h5>
-                <select class="form-select" id="tipo-materia" aria-label="Escolha o tipo de matéria">
-                  <option value="portugues">Português</option>
-                  <option value="matematica">Matemática</option>
-                  <option value="geografia">Geografia</option>
-                  <option value="historia">História</option>
-                  <option value="ingles">Inglês</option>
+                <h5>Carga horaria</h5>
+                <input type="text" class="form-control" id="carga" placeholder="Duração do curso">
+              </div>
+              <div class="mb-3">
+                <h5>Area de Conhecimento</h5>
+                <select class="form-select" id="area" aria-label="Escolha o tipo de matéria">
+                  <option value="nulo"></option>
+                  <option value="Tecnologia">Tecnologia</option>
+                  <option value="Matematica">Matemática</option>
+                  <option value="Financas">Finanças</option>
+                  <option value="Enem">Enem</option>
+                  <option value="Qualidade">Qualidade</option>
+                  <option value="Design">Design</option>
+                  <option value="Marketing">Marketing</option>
+                  <option value="Biologia">Biologia</option>
+                  <option value="Engenharia">Engenharia</option>
                 </select>
               </div>
             </form>
@@ -92,7 +106,7 @@
         </div>
       </div>
 
-      <div class="row">
+      <div class="row-fluid">
         <div class="col-lg-12">
           <div>
             <h5 class="mb-3">Descrição</h5>
@@ -101,30 +115,42 @@
             </div>
             <button type="submit" class="btn text-white col-lg-4 button btn-custom" id="submit-button"
               style="float: right;">Enviar</button>
+
           </div>
         </div>
       </div>
 
-      <div class="container mt-5 p-0">
-        <div class="row">
-          <div class="col-lg-12">
-            <h5 class="mb-3">Aulas Publicadas</h5>
-            <table class="table">
-              <thead>
-                <tr>
-                  <th style="color: white;">Título</th>
-                  <th style="color: white;">Descrição</th>
-                  <th style="color: white;">Tipo de Matéria</th>
-                  <th style="color: white; min-width: 150px;">Ações</th>
-                </tr>
-              </thead>
-              <tbody id="aulas-tbody">
-                <!--Aulas aqui-->
-              </tbody>
-            </table>
+
+      <div class="modal" id="modalErro">
+
+          <div class="box-modal-erro" >
+
+              <h4>Atenção</h4>
+              <p>Preencha todos os campos para poder publicar seu curso.</p>
+
+              <div id="box-modal-Erro">
+              </div>
+              <div id="btnFecharErro" class="d-flex justify-content-end"><button class="btn btn-primary">Fechar</button></div>
+
           </div>
-        </div>
+
       </div>
+
+      <div class="modal" id="modalSucesso">
+
+        <div class="box-modal-sucesso">
+
+            <h4>Parabens!</h4>
+            <p>Seu curso foi publicado.</p>
+
+            <div id="btnFecharSucesso" class="d-flex justify-content-end"><button class="btn btn-primary">Fechar</button></div>
+
+        </div>
+
+    </div>
+
+
+
     </main>
 
     <footer class="green-default-color mt-5 p-3 d-flex flex-column justify-content-between">

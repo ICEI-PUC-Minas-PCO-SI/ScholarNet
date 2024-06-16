@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .then((res) => res.json())
             .then((data) => {
                 cursoDados = data;
+                console.log(cursoDados)
                 filteredCursos = cursoDados;
                 displayProducts(pagAtual);
                 setupPagination();
@@ -34,20 +35,20 @@ document.addEventListener('DOMContentLoaded', () => {
             productDiv.className = 'col';
             productDiv.innerHTML = `
                 <div class="card">
+                    <a target="_blank" href="${product.Video}">
                     <div class="card-body">
                         <h5 class="card-title text-primary">${product.NomeCurso}</h5>
                         <p class="card-text">${product.Descricao}</p>
                         <p class="card-text my-0"><span class="fw-bold">Material: </span>${product.MaterialEstudo}</p>
                         <p class="card-text my-0"><span class="fw-bold">Área: </span>${product.AreaConhecimento}</p>
                         <p class="card-text my-0"><span class="fw-bold">Carga Horária: </span>${product.CargaHoraria} horas</p>
-                        <p class="card-text my-0"><span class="fw-bold">Preço: </span>R$${product.Preco}</p>
-                        <p class="card-text my-0"><span class="fw-bold">Localização: </span>${product.Localizacao}</p>
-                        <p class="card-text my-0"><span class="fw-bold">Modalidade: </span>${product.Modalidade}</p>
                     </div>
+                    </a>
                 </div>`;
             cursoGrid.appendChild(productDiv);
         });
     }
+    
 
     function setupPagination() {
         const paginacao = document.getElementById('paginacao');
@@ -76,10 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
             curso.NomeCurso.toLowerCase().includes(query) ||
             curso.MaterialEstudo.toLowerCase().includes(query) ||
             curso.AreaConhecimento.toLowerCase().includes(query) ||
-            curso.CargaHoraria.toString().includes(query) ||
-            curso.Preco.toString().includes(query) ||
-            curso.Localizacao.toLowerCase().includes(query) ||
-            curso.Modalidade.toLowerCase().includes(query)
+            curso.CargaHoraria.toString().includes(query)
         );
         pagAtual = 1;
         displayProducts(pagAtual);

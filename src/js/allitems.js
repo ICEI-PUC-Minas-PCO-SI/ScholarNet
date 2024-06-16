@@ -191,53 +191,41 @@ async function getAllCursos() {
 
 // Cria um novo Curso 
 async function createCursos(
-  CursoID,
   NomeCurso,
   Descricao,
   MaterialEstudo,
   AreaConhecimento,
   CargaHoraria,
-  Preco,
-  Localizacao,
-  Modalidade
+  Video
 ) {
   return await Curso.create({
-    CursoID,
     NomeCurso,
     Descricao,
     MaterialEstudo,
     AreaConhecimento,
     CargaHoraria,
-    Preco,
-    Localizacao,
-    Modalidade
+    Video
   });
 }
 
 // Atualiza um Curso
 async function updateCursos(
-  CursoID,
   NomeCurso,
   Descricao,
   MaterialEstudo,
   AreaConhecimento,
   CargaHoraria,
-  Preco,
-  Localizacao,
-  Modalidade
+  Video
 ) {
   const curso = await Curso.findByPk(id);
   if (!curso) throw new Error("Curso não foi encontrado");
   return await curso.update({
-    CursoID,
     NomeCurso,
     Descricao,
     MaterialEstudo,
     AreaConhecimento,
     CargaHoraria,
-    Preco,
-    Localizacao,
-    Modalidade
+    Video
   });
 }
 

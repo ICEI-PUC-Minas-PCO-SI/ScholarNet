@@ -144,17 +144,14 @@ app.get("/cursoData", async (req, res) => {
 
 app.post("/post/cursoData", async (req, res) => {
   try {
-    const { CursoID, NomeCurso, Descricao, MaterialEstudo, AreaConhecimento, CargaHoraria, Preco, Localizacao, Modalidade } = req.body;
+    const {NomeCurso, Descricao, MaterialEstudo, AreaConhecimento, CargaHoraria, Video} = req.body;
     await createCursos(
-      CursoID,
       NomeCurso,
       Descricao,
       MaterialEstudo,
       AreaConhecimento,
       CargaHoraria,
-      Preco,
-      Localizacao,
-      Modalidade
+      Video
     );
     res.status(201).json({ message: "Curso criado com sucesso" });
   } catch (error) {
@@ -166,7 +163,7 @@ app.post("/post/cursoData", async (req, res) => {
 app.patch("/update/cursoData/:CursoID", async (req, res) => {
   try {
     const id = req.params.CursoID;
-    const { NomeCurso, Descricao, MaterialEstudo, AreaConhecimento, CargaHoraria, Preco, Localizacao, Modalidade } = req.body;
+    const { NomeCurso, Descricao, MaterialEstudo, AreaConhecimento, CargaHoraria, Video} = req.body;
     await updateCursos(
       id,
       NomeCurso,
@@ -174,9 +171,7 @@ app.patch("/update/cursoData/:CursoID", async (req, res) => {
       MaterialEstudo,
       AreaConhecimento,
       CargaHoraria,
-      Preco,
-      Localizacao,
-      Modalidade
+      Video
     );
     res.status(200).json({ message: "Curso atualizado com sucesso" });
   } catch (error) {

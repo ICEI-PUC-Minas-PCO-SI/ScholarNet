@@ -28,14 +28,8 @@ const Curso = sequelize.define("curso", {
   CargaHoraria: {
     type: DataTypes.INTEGER,
   },
-  Preco: {
+  Video: {
     type: DataTypes.DECIMAL,
-  },
-  Localizacao: {
-    type: DataTypes.STRING,
-  },
-  Modalidade: {
-    type: DataTypes.STRING,
   }
 },
   {
