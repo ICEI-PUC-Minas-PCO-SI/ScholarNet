@@ -12,9 +12,46 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 function logar() {
+
+  const inputEmail = document.getElementById('inputEmail').value;
+  const inputPassword = document.getElementById('inputPassword').value;
+
+  // Requisição para obter os dados do educador
+  fetch('http://localhost:3009/educadorData')
+      .then(response => response.json())
+      .then(educadorData => {
+          const educadorCredentials = educadorData
+
+          for (let i = 0; i < educadorCredentials.length; i++) {
+              if (educadorCredentials[i].Email === inputEmail && educadorCredentials[i].Senha === inputPassword) {
+                  localStorage.setItem('userType', '1'); // Educador
+                  localStorage.setItem('CPF', educadorData[i].CPF);
+                  window.location.href = "index.html"
+                  return;
+              }
+          }
+
+          // Se não encontrou no conjunto de credenciais do educador, verifica no conjunto de credenciais do aluno
+          fetch('http://localhost:3009/alunoData')
+              .then(response => response.json())
+              .then(alunoData => {
+                  const alunoCredentials = alunoData
+                  for (let i = 0; i < alunoCredentials.length; i++) {
+                      if (alunoCredentials[i].Email === inputEmail && alunoCredentials[i].Senha === inputPassword) {
+                          localStorage.setItem('userType', '2');
+                          localStorage.setItem('CPF', alunoData[i].CPF);
+                          window.location.href = "index.html"
+                          return;
+                      }
+                  }
+
+                  // Se não encontrou no conjunto de credenciais do aluno também, exibe mensagem de credenciais inválidas
+                  alert('Credenciais inválidas');
+              });
+      });
+  }
   
 
-}
 
 
 

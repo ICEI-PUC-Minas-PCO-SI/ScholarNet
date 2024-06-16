@@ -74,7 +74,6 @@ fetch('http://localhost:3009/cursoData', {
                     curso.style.padding = "10px"
                     curso.className = "cursoBox x"
                     curso.name = cursoDados[num[i]].NomeCurso
-                    console.log(curso.name)
                     curso.innerHTML = `         
                     <h5 class="text-primary fs-6">${cursoDados[num[i]].NomeCurso}</h5>
                     <p class="m-0 p-0"><strong>Área: </strong>${cursoDados[num[i]].AreaConhecimento}</p>
