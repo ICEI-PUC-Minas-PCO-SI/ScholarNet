@@ -261,8 +261,8 @@ app.get("/faqData", async (req, res) => {
 
 app.post("/post/faqData", async (req, res) => {
   try {
-    const { pergunta, resposta, comentario, CpfUser } = req.body;
-    await createFAQ(pergunta, resposta, comentario, CpfUser);
+    const { Pergunta, Resposta, Comentario, CpfUser } = req.body;
+    await createFAQ(Pergunta, Resposta, Comentario, CpfUser);
     res.status(201).json({ message: "FAQ criada com sucesso" });
   } catch (error) {
     console.error(error);

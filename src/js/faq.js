@@ -1,24 +1,22 @@
 document.addEventListener("DOMContentLoaded", () => {
-  let botaoEnviarComentario = document
-    .getElementById("btnEnviar-Comentario")
-    .addEventListener("click", () => {
-      let cpfUser = localStorage.getItem("CPF");
-      let comentario = document.getElementById("floatingTextarea2").value;
-      console.log(comentario);
-      if (comentario !== "" && comentario != null) {
-        EnviarMensagem(comentario, cpfUser);
-      } else {
-        redMensagem();
-      }
-    });
+  var botaoEnviarComentario = document.getElementById("btnEnviar-Comentario")
+  botaoEnviarComentario.addEventListener("click", () => {
+    let cpfUser = localStorage.getItem("CPF");
+    let comentario = document.getElementById("coment").value;
+    console.log(comentario);
+    if (comentario !== "" && comentario != null) {
+      EnviarMensagem(comentario, cpfUser);
+    } else {
+      redMensagem();
+    }
+  });
 });
 
 function EnviarMensagem(comentario, cpf) {
+
   let comentarioData = {
-    Pergunta: comentario,
-    Resposta: "",
     Comentario: comentario,
-    CpfUser: cpf,
+    CpfUser: cpf
   };
   fetch("http://localhost:3009/post/faqData", {
     method: "POST",
@@ -40,7 +38,7 @@ function GreenMensagem() {
   let campoMenssagem = document.getElementById("floatingTextarea2");
   let mensagem = document.getElementById("mensagemEnvio");
   mensagem.innerHTML = "Pergunta enviada com Sucesso";
-  mensagem.style.background = "green";
+  mensagem.style.background = "#064f47";
   mensagem.style.display = "block";
   setTimeout(() => {
     campoMenssagem.value = " ";

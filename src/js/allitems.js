@@ -301,14 +301,12 @@ async function getAllFAQ() {
 
 // Cria uma nova Aula 
 async function createFAQ(
-  FAQID,
   Pergunta,
   Resposta,
   Comentario,
   CpfUser
 ) {
   return await FAQ.create({
-    FAQID,
     Pergunta,
     Resposta,
     Comentario,

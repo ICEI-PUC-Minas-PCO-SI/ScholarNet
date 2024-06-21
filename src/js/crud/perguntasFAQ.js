@@ -16,7 +16,7 @@ const FAQ = sequelize.define("FAQ", {
   Comentario: {
     type: DataTypes.STRING,
   },
-  Cpfuser: {
+  CpfUser: {
     type: DataTypes.STRING,
   }
 },
