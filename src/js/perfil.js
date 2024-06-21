@@ -138,3 +138,4 @@ var sair = document.getElementById("sairBtn")
 sair.addEventListener("click", ()=>{
     localStorage.clear()
 })
+
