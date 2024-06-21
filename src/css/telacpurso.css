@@ -14,7 +14,9 @@ body {
   flex-direction: column;
   justify-content: space-between;
 }
-
+.bloco-Container {
+  display: none;
+}
 .w-size {
   max-width: 1200px;
 }

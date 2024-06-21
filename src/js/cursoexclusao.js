@@ -28,12 +28,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const start = (page - 1) * cursoPerPage;
     const end = page * cursoPerPage;
     const paginatedProducts = filteredCursos.slice(start, end);
-
+    let cpfUser = localStorage.getItem("CPF");
+    let divContaine = document.querySelector(".bloco-Container");
+    divContaine.style.display = "block";
     paginatedProducts.forEach((product) => {
       console.log(product);
       const productDiv = document.createElement(`div`);
       productDiv.className = `col${product.CursoID}`;
-      productDiv.innerHTML = `
+      if (product.CpfUser == cpfUser) {
+        divContaine.style.display = "none";
+        productDiv.innerHTML = `
               <div class='cardMaster'>
                 <div class="card">
                   <a target="_blank" href="${product.Video}">
@@ -49,6 +53,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 <button class='cursoExcluir-${product.CursoID}' >Excluir</button>
                 <button class='cursoEditar-${product.CursoID}' >Editar</button>
               </div>`;
+      } else {
+        divContaine.style.display = "block";
+      }
+
       cursoGrid.appendChild(productDiv);
       const elementos = document.querySelectorAll('[class^="cursoExcluir-"]');
       elementos.forEach((elemento) => {
@@ -63,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
     alert("Teste " + idExcluir);
     const div = document.querySelector(`.col${idExcluir}`);
     console.log(div);
-    fetch(`http://localhost:3009/cursoData/cursoID/${idExcluir}`, {
+    fetch(`http://localhost:3009/delete/cursoData/${idExcluir}`, {
       method: "DELETE",
     })
       .then((response) => {
