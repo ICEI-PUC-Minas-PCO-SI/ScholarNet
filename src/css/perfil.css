@@ -207,13 +207,9 @@ body::-webkit-scrollbar {
 .services-Prestados,
 .services-Contratados {
   padding: 20px;
-  color: #fff;
-  margin: 0; 
 }
 
-.services-Prestados {
-    border-right: 2px solid white;
-}
+
 
 @media screen and (max-width: 575px) {
   .services-Prestados {

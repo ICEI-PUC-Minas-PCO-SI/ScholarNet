@@ -66,8 +66,8 @@ app.post("/post/alunoData", async (req, res) => {
 app.patch("/update/alunoData/:CPF", async (req, res) => {
   try {
     const cpfAluno = req.params.cpfAluno;
-    const { nomeAluno, email, senha, telefone, matricula } = req.body;
-    await updateAluno(cpfAluno, nomeAluno, email, senha, telefone, matricula);
+    const { DtNascimento, Descricao, Localizacao } = req.body;
+    await updateAluno(cpfAluno, DtNascimento, Descricao, Localizacao);
     res.status(200).json({ message: "Aluno atualizado com sucesso" });
   } catch (error) {
     console.error(error);
@@ -99,8 +99,8 @@ app.get("/educadorData", async (req, res) => {
 
 app.post("/post/educadorData", async (req, res) => {
   try {
-    const { CPF, Nome, Email, Senha, Telefone} = req.body;
-    await createEducador(CPF, Nome, Email, Senha, Telefone);
+    const {Nome, Email, Senha, Telefone, DtNascimento, Descricao, Localizacao } = req.body;
+    await createEducador(CPF, Nome, Email, Senha, Telefone,  DtNascimento, Descricao, Localizacao );
     res.status(201).json({ message: "Educador criado com sucesso" });
   } catch (error) {
     console.error(error);
@@ -111,8 +111,8 @@ app.post("/post/educadorData", async (req, res) => {
 app.patch("/update/educadorData/:cpfEducador", async (req, res) => {
   try {
     const cpfEducador = req.params.cpfEducador;
-    const { nomeEducador, email, senha, telefone, matricula } = req.body;
-    await updateEducador(cpfEducador, nomeEducador, email, senha, telefone, matricula);
+    const {nomeEducador, email, senha, telefone, DtNascimento, Descricao, Localizacao } = req.body;
+    await updateEducador(cpfEducador, nomeEducador, email, senha, telefone, DtNascimento, Descricao, Localizacao );
     res.status(200).json({ message: "Educador atualizado com sucesso" });
   } catch (error) {
     console.error(error);

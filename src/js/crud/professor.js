@@ -19,6 +19,15 @@ const Professor = sequelize.define("ProfissionalEducador", {
   },
   Telefone: {
     type: DataTypes.STRING,
+  },
+  DtNascimento: {
+    type: DataTypes.STRING,
+  },
+  Localizacao: {
+    type: DataTypes.STRING,
+  },
+  Descricao: {
+    type: DataTypes.STRING,
   }
 },
   {

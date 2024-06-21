@@ -42,7 +42,7 @@ async function updateAluno(
   Senha,
   Telefone
 ) {
-  const aluno = await Aluno.findByPk(id);
+  const aluno = await Aluno.findByPk(CPF);
   if (!aluno) throw new Error("Aluno não foi encontrado");
   return await aluno.update({
     CPF,
@@ -94,16 +94,22 @@ async function updateEducador(
   Nome,
   Email,
   Senha,
-  Telefone
+  Telefone,
+  DtNascimento,
+  Descricao,
+  Localizacao
 ) {
-  const educador = await Professor.findByPk(id);
+  const educador = await Professor.findByPk(CPF);
   if (!educador) throw new Error("Professor não foi encontrado");
   return await educador.update({
     CPF,
     Nome,
     Email,
     Senha,
-    Telefone
+    Telefone,
+    DtNascimento,
+    Descricao,
+    Localizacao
   });
 }
 
