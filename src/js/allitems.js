@@ -303,12 +303,16 @@ async function getAllFAQ() {
 async function createFAQ(
   FAQID,
   Pergunta,
-  Resposta
+  Resposta,
+  Comentario,
+  CpfUser
 ) {
   return await FAQ.create({
     FAQID,
     Pergunta,
-    Resposta
+    Resposta,
+    Comentario,
+    CpfUser
   });
 }
 
