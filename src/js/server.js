@@ -261,8 +261,8 @@ app.get("/faqData", async (req, res) => {
 
 app.post("/post/faqData", async (req, res) => {
   try {
-    const { pergunta, resposta } = req.body;
-    await createFAQ(pergunta, resposta);
+    const { pergunta, resposta, comentario, CpfUser } = req.body;
+    await createFAQ(pergunta, resposta, comentario, CpfUser);
     res.status(201).json({ message: "FAQ criada com sucesso" });
   } catch (error) {
     console.error(error);
@@ -273,8 +273,8 @@ app.post("/post/faqData", async (req, res) => {
 app.patch("/update/faqData/:FAQID", async (req, res) => {
   try {
     const id = req.params.FAQID;
-    const { pergunta, resposta } = req.body;
-    await updateFAQ(id, pergunta, resposta);
+    const { pergunta, resposta, comentario, CpfUser } = req.body;
+    await updateFAQ(id, pergunta, resposta, comentario, CpfUser);
     res.status(200).json({ message: "FAQ atualizada com sucesso" });
   } catch (error) {
     console.error(error);
