@@ -30,6 +30,9 @@ const Curso = sequelize.define("curso", {
   },
   Video: {
     type: DataTypes.DECIMAL,
+  },
+  CpfUser: {
+    type: DataTypes.STRING,
   }
 },
   {

@@ -13,8 +13,6 @@ const CarregarPagina = (user) => {
   document.getElementById("text-local").textContent = user.Localizacao
   document.getElementById("descricao").textContent = user.Descricao
   document.getElementById("text-idade").textContent = calcularIdade(user.DtNascimento) + " anos"
-  console.log(user.Email);
-  console.log(user);
 };
 function CarregarConteudo(cpf) {
   fetch(`http://localhost:3009/alunoData`)
@@ -30,7 +28,7 @@ function CarregarConteudo(cpf) {
           for (let i = 0; i < alunoData.length; i++) {
             if (alunoData[i].CPF == cpf) {
               userEncotrado = alunoData[i];
-              console.log(userEncotradoEncotrado);
+              console.log(userEncotrado);
             }
             for (let i = 0; i < educadorData.length; i++) {
               if (educadorData[i].CPF == cpf) {
@@ -135,3 +133,8 @@ function calcularIdade(dataNascimento) {
   
   return idade;
 }
+
+var sair = document.getElementById("sairBtn")
+sair.addEventListener("click", ()=>{
+    localStorage.clear()
+})

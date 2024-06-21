@@ -63,11 +63,11 @@ app.post("/post/alunoData", async (req, res) => {
   }
 });
 
-app.patch("/update/alunoData/:CPF", async (req, res) => {
+app.patch("/update/alunoData/:cpfAluno", async (req, res) => {
   try {
     const cpfAluno = req.params.cpfAluno;
-    const { DtNascimento, Descricao, Localizacao } = req.body;
-    await updateAluno(cpfAluno, DtNascimento, Descricao, Localizacao);
+    const { Nome, Email, Senha, Telefone, DtNascimento, Descricao, Localizacao } = req.body;
+    await updateAluno(cpfAluno, Nome, Email, Senha, Telefone, DtNascimento, Descricao, Localizacao);
     res.status(200).json({ message: "Aluno atualizado com sucesso" });
   } catch (error) {
     console.error(error);
@@ -144,14 +144,15 @@ app.get("/cursoData", async (req, res) => {
 
 app.post("/post/cursoData", async (req, res) => {
   try {
-    const {NomeCurso, Descricao, MaterialEstudo, AreaConhecimento, CargaHoraria, Video} = req.body;
+    const {NomeCurso, Descricao, MaterialEstudo, AreaConhecimento, CargaHoraria, Video, CpfUser} = req.body;
     await createCursos(
       NomeCurso,
       Descricao,
       MaterialEstudo,
       AreaConhecimento,
       CargaHoraria,
-      Video
+      Video,
+      CpfUser
     );
     res.status(201).json({ message: "Curso criado com sucesso" });
   } catch (error) {
@@ -163,7 +164,7 @@ app.post("/post/cursoData", async (req, res) => {
 app.patch("/update/cursoData/:CursoID", async (req, res) => {
   try {
     const id = req.params.CursoID;
-    const { NomeCurso, Descricao, MaterialEstudo, AreaConhecimento, CargaHoraria, Video} = req.body;
+    const { NomeCurso, Descricao, MaterialEstudo, AreaConhecimento, CargaHoraria, Video, CpfUser} = req.body;
     await updateCursos(
       id,
       NomeCurso,
@@ -171,7 +172,8 @@ app.patch("/update/cursoData/:CursoID", async (req, res) => {
       MaterialEstudo,
       AreaConhecimento,
       CargaHoraria,
-      Video
+      Video,
+      CpfUser
     );
     res.status(200).json({ message: "Curso atualizado com sucesso" });
   } catch (error) {

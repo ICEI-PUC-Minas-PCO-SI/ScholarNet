@@ -22,6 +22,15 @@ const Aluno = sequelize.define(
     Telefone: {
       type: DataTypes.STRING,
     },
+    DtNascimento: {
+      type: DataTypes.STRING,
+    },
+    Localizacao: {
+      type: DataTypes.STRING,
+    },
+    Descricao: {
+      type: DataTypes.STRING,
+    }
   },
   {
     tableName: "Aluno",

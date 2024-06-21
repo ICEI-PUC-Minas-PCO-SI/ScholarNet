@@ -11,6 +11,7 @@ var campos = {
 
 function postarCurso() {
 
+    let cpfUser = localStorage.getItem("CPF")
     let titulo = campos.Titulo.value;
     let material = campos.Material.value;
     let video = campos.Video.value;
@@ -24,7 +25,8 @@ function postarCurso() {
         Video: video,
         CargaHoraria: carga,
         AreaConhecimento: area,
-        Descricao: descricao
+        Descricao: descricao,
+        CpfUser: cpfUser
     };
 
     fetch("http://localhost:3009/post/cursoData", {
@@ -47,13 +49,14 @@ function postarCurso() {
             console.error("Erro:", error);
         });
 
+
     var modalSucesso = document.getElementById("modalSucesso")
 
     modalSucesso.style.display = "flex";
 
     var btnFecharSucesso = document.getElementById("btnFecharSucesso")
-    
-        btnFecharSucesso.addEventListener("click", () => {
+
+    btnFecharSucesso.addEventListener("click", () => {
         modalSucesso.style.display = "none"
         window.location.href = "index.html";
     })

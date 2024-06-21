@@ -40,16 +40,23 @@ async function updateAluno(
   Nome,
   Email,
   Senha,
-  Telefone
+  Telefone,
+  DtNascimento,
+  Descricao,
+  Localizacao
 ) {
   const aluno = await Aluno.findByPk(CPF);
+  console.log(aluno)
   if (!aluno) throw new Error("Aluno não foi encontrado");
   return await aluno.update({
     CPF,
     Nome,
     Email,
     Senha,
-    Telefone
+    Telefone,
+    DtNascimento,
+    Descricao,
+    Localizacao
   });
 }
 
@@ -192,7 +199,8 @@ async function createCursos(
   MaterialEstudo,
   AreaConhecimento,
   CargaHoraria,
-  Video
+  Video,
+  CpfUser
 ) {
   return await Curso.create({
     NomeCurso,
@@ -200,7 +208,8 @@ async function createCursos(
     MaterialEstudo,
     AreaConhecimento,
     CargaHoraria,
-    Video
+    Video,
+    CpfUser
   });
 }
 
