@@ -15,7 +15,12 @@ body {
 .main {
   min-width: 100vh;
 }
-
+#mensagemEnvio {
+  display: none;
+  font-size: 1.2rem;
+  color: black;
+  font-weight: bold;
+}
 .w-size {
   max-width: 1200px;
 }

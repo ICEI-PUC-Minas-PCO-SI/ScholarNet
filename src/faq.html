@@ -9,6 +9,7 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="./css/faq.css">
   <link rel="shortcut icon" type="image/jpg" href="./imgs/Favicon.png" />
+  <script src="./js/faq.js" defer></script>
   <title>Scholar Net</title>
 </head>
 
@@ -111,10 +112,11 @@
             <label for="floatingTextarea2">Comentario</label>
           </div>
           <span class="btn-submit">
-            <button type="submit" class="btn">Enviar</button>
-
+            <button type="submit" id="btnEnviar-Comentario" class="btn">Enviar</button>
           </span>
-
+          <div class="alert alert-success " id="mensagemEnvio" role="alert">
+            A simple success alert—check it out!
+          </div>
         </article>
 
       </section>
