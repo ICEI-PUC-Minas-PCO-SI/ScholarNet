@@ -232,3 +232,9 @@ body::-webkit-scrollbar {
   text-decoration: none;
   color: white;
 }
+
+.ftPerfil {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}

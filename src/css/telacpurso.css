@@ -211,3 +211,7 @@ a {
 .bg {
   min-height: 100vh;
 }
+
+.edit-list {
+  list-style: none;
+}

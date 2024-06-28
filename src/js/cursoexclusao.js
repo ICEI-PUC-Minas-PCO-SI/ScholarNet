@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
     paginatedProducts.forEach((product) => {
       console.log(product);
       const productDiv = document.createElement(`div`);
-      productDiv.className = `col${product.CursoID}`;
+      productDiv.className = `col`;
       if (product.CpfUser == cpfUser) {
         divContaine.style.display = "none";
         productDiv.innerHTML = `
@@ -50,8 +50,8 @@ document.addEventListener("DOMContentLoaded", () => {
                   </div>
                   </a>
                 </div>
-                <button class='cursoExcluir-${product.CursoID}' >Excluir</button>
-                <button class='cursoEditar-${product.CursoID}' >Editar</button>
+                <button class='cursoExcluir-${product.CursoID} text-white' >Excluir</button>
+                <button class='cursoEditar-${product.CursoID} text-white' type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" id="editar-curso" cursoid="${product.CursoID}">Editar</button>
               </div>`;
       } else {
         divContaine.style.display = "block";
@@ -118,14 +118,70 @@ document.addEventListener("DOMContentLoaded", () => {
   fetchCursos();
 });
 
+var perfilBtn = document.getElementById("perfil-btn")
 var islogged = document.getElementById("userLogado")
-if(localStorage.getItem("CPF")){
-    islogged.textContent = "Sair"
-    islogged.addEventListener("click", ()=>{
-        window.location.href = "telalogin.html"
-        localStorage.clear()
-    })
+if (localStorage.getItem("CPF")) {
+  islogged.textContent = "Sair"
+  islogged.addEventListener("click", () => {
+    window.location.href = "telalogin.html"
+    localStorage.clear()
+  })
+
 }
-else if(!localStorage.getItem("CPF")){
-    islogged.textContent = "Login/Registrar"
+else if (!localStorage.getItem("CPF")) {
+  islogged.textContent = "Login/Registrar"
+  perfilBtn.style.display = "none"
 }
+
+var isEducador = document.getElementById("publicar-btn")
+if (localStorage.getItem("userType") == 1) {
+
+}
+else {
+  isEducador.style.display = "none"
+}
+
+
+
+var salvarBtn = document.getElementById("salvar").addEventListener("click", ()=>{
+
+  var titulo = document.getElementById("titulo-curso").value
+  var desc = document.getElementById("desc-curso").value
+  var carga = document.getElementById("carga-curso").value
+  var material = document.getElementById("material-curso").value
+  var editar = document.getElementById("editar-curso")
+  var IdCurso = editar.getAttribute("cursoid")
+
+  var dadosAtualizados = {};
+  if (titulo) dadosAtualizados.NomeCurso = titulo;
+  if (desc) dadosAtualizados.Descricao = desc;
+  if (material) dadosAtualizados.MaterialEstudo = material;
+  if (carga) dadosAtualizados.CargaHoraria = carga;
+
+  if (Object.keys(dadosAtualizados).length === 0) {
+    console.error("Nenhum campo foi preenchido para atualização.");
+    return; 
+  }
+
+  fetch(`http://localhost:3009/update/cursoData/${IdCurso}`, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(dadosAtualizados)
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Erro ao atualizar curso');
+    }
+    return response.json();
+  })
+  .then(data => {
+    console.log('Curso atualizado com sucesso:', data);
+    alert("Curso Atualizado com Sucesso")
+    window.location.href = "perfil.html"
+  })
+  .catch(error => {
+    console.error('Erro ao atualizar curso:', error);
+  });
+})

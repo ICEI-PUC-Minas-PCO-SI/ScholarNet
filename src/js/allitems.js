@@ -43,7 +43,8 @@ async function updateAluno(
   Telefone,
   DtNascimento,
   Descricao,
-  Localizacao
+  Localizacao,
+  Foto
 ) {
   const aluno = await Aluno.findByPk(CPF);
   console.log(aluno)
@@ -56,7 +57,8 @@ async function updateAluno(
     Telefone,
     DtNascimento,
     Descricao,
-    Localizacao
+    Localizacao,
+    Foto
   });
 }
 
@@ -104,7 +106,8 @@ async function updateEducador(
   Telefone,
   DtNascimento,
   Descricao,
-  Localizacao
+  Localizacao,
+  Foto
 ) {
   const educador = await Professor.findByPk(CPF);
   if (!educador) throw new Error("Professor não foi encontrado");
@@ -116,7 +119,8 @@ async function updateEducador(
     Telefone,
     DtNascimento,
     Descricao,
-    Localizacao
+    Localizacao,
+    Foto
   });
 }
 
@@ -215,12 +219,11 @@ async function createCursos(
 
 // Atualiza um Curso
 async function updateCursos(
+  id,
   NomeCurso,
   Descricao,
   MaterialEstudo,
-  AreaConhecimento,
   CargaHoraria,
-  Video
 ) {
   const curso = await Curso.findByPk(id);
   if (!curso) throw new Error("Curso não foi encontrado");
@@ -228,9 +231,7 @@ async function updateCursos(
     NomeCurso,
     Descricao,
     MaterialEstudo,
-    AreaConhecimento,
     CargaHoraria,
-    Video
   });
 }
 

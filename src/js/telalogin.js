@@ -44,7 +44,7 @@ function logar() {
             }
           }
 
-          f; // Se não encontrou no conjunto de credenciais do aluno também, exibe mensagem de credenciais inválidas
+; // Se não encontrou no conjunto de credenciais do aluno também, exibe mensagem de credenciais inválidas
           alert("Credenciais inválidas");
         });
     });

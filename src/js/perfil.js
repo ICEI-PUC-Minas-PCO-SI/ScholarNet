@@ -1,7 +1,6 @@
 const teste = () => {
   const localStorageCPF = localStorage.getItem("CPF");
   if (localStorageCPF != null) {
-    console.log(localStorageCPF);
     CarregarConteudo(localStorageCPF);
   }
 };
@@ -13,7 +12,12 @@ const CarregarPagina = (user) => {
   document.getElementById("text-local").textContent = user.Localizacao
   document.getElementById("descricao").textContent = user.Descricao
   document.getElementById("text-idade").textContent = calcularIdade(user.DtNascimento) + " anos"
+  if(user.Foto){document.getElementById("ftPerfil").src = user.Foto}
 };
+
+var alterFt = document.getElementById("alterarFoto")
+alterFt.addEventListener("click", alterarFoto)
+
 function CarregarConteudo(cpf) {
   fetch(`http://localhost:3009/alunoData`)
     .then((response) => response.json())
@@ -28,19 +32,17 @@ function CarregarConteudo(cpf) {
           for (let i = 0; i < alunoData.length; i++) {
             if (alunoData[i].CPF == cpf) {
               userEncotrado = alunoData[i];
-              console.log(userEncotrado);
+
             }
             for (let i = 0; i < educadorData.length; i++) {
               if (educadorData[i].CPF == cpf) {
                 userEncotrado = educadorData[i];
-                console.log(userEncotrado);
               }
             }
 
             try {
               CarregarPagina(userEncotrado);
             } catch (error) {
-              console.log("Error");
             }
           }
         });
@@ -139,3 +141,89 @@ sair.addEventListener("click", ()=>{
     localStorage.clear()
 })
 
+var perfilBtn = document.getElementById("perfil-btn")   
+var islogged = document.getElementById("userLogado")
+if(localStorage.getItem("CPF")){
+    islogged.textContent = "Sair"
+    islogged.addEventListener("click", ()=>{
+        window.location.href = "telalogin.html"
+        localStorage.clear()
+    })
+
+}
+else if(!localStorage.getItem("CPF")){
+    islogged.textContent = "Login/Registrar"
+    perfilBtn.style.display = "none"
+}
+
+var isEducador = document.getElementById("publicar-btn")
+var excluirCurso = document.getElementById("excluirCurso-btn")
+if(localStorage.getItem("userType") == 1){
+    
+}
+else {
+    isEducador.style.display = "none"
+    excluirCurso.style.display = "none"
+}
+
+async function alterarFoto(){
+    
+  var URL = document.getElementById("URL-ftPerfil").value
+  console.log(URL)
+  
+  var urlFoto = {};
+  if (URL) urlFoto.Foto = URL;
+
+  if (Object.keys(urlFoto).length === 0) {
+    console.error("Nenhum campo foi preenchido para atualização.");
+    return; 
+  }
+
+
+  if(userType == 1){
+    await fetch(`http://localhost:3009/update/educadorData/${cpf}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(urlFoto)
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Erro ao atualizar foto');
+      }
+      return response.json();
+    })
+    .then(data => {
+      console.log('Foto atualizada com sucesso:', data);
+    })
+    .catch(error => {
+      console.error('Erro ao atualizar foto:', error);
+    });
+  }
+
+  
+  if(userType == 2){
+    await fetch(`http://localhost:3009/update/alunoData/${cpf}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(urlFoto)
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Erro ao atualizar foto');
+      }
+      return response.json();
+    })
+    .then(data => {
+      console.log('Foto atualizada com sucesso:', data);
+    })
+    .catch(error => {
+      console.error('Erro ao atualizar foto:', error);
+    });
+  }
+
+    window.location.reload()
+}

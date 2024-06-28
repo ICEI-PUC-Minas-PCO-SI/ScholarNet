@@ -36,13 +36,13 @@
             <a class="nav-link active text-light hover-effect-btn" aria-current="page" href="./sobrenos.html">Sobre nós</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active text-light hover-effect-btn" aria-current="page" href="./perfil.html">Perfil</a>
+            <a class="nav-link active text-light hover-effect-btn" aria-current="page" href="./perfil.html" id="perfil-btn">Perfil</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active text-light hover-effect-btn" aria-current="page" href="./faq.html">FAQ</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active text-light hover-effect-btn" aria-current="page" href="./telapublicacao.html">Publicar</a>
+            <a class="nav-link active text-light hover-effect-btn" aria-current="page" href="./telapublicacao.html" id="publicar-btn">Publicar</a>
           </li>
           <li class="nav-item ms-lg-5">
             <a class="nav-link active text-light hover-effect-btn" href="./telalogin.html" id="userLogado"></a>
@@ -80,7 +80,59 @@
           <div class="text-white d-flex flex-row justify-content-end align-items-center" id="paginacao">
 
           </div>
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Curso</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                  <div class="row">
+                    <div class="col text-end">
+                      <label for="titulo">Título: </label>
+                    </div>
+                    <div class="col text-start">
+                      <input type="text" id="titulo-curso">
+                    </div>
+                  </div>
       
+                  <div class="row mt-3">
+                    <div class="col text-end">
+                      <label for="desc">Descrição: </label>
+                    </div>
+                    <div class="col text-start">
+                      <input type="text" id="desc-curso">
+                    </div>
+                  </div>
+      
+                  <div class="row mt-3">
+                    <div class="col text-end">
+                      <label for="local">Carga Horaria: </label>
+                    </div>
+                    <div class="col text-start">
+                      <input type="text" id="carga-curso">
+                    </div>
+                  </div>
+
+                  <div class="row mt-3">
+                    <div class="col text-end">
+                      <label for="local">Material: </label>
+                    </div>
+                    <div class="col text-start">
+                      <input type="text" id="material-curso">
+                    </div>
+                  </div>
+      
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                  <button type="button" class="btn btn-primary" id="salvar">Salvar</button>
+                </div>
+              </div>
+            </div>
+          </div>
       </div>
       
     </div>

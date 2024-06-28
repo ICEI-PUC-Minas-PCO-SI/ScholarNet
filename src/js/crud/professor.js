@@ -29,6 +29,10 @@ const Professor = sequelize.define("ProfissionalEducador", {
   Descricao: {
     type: DataTypes.STRING,
   }
+  ,
+  Foto: {
+    type: DataTypes.STRING,
+  }
 },
   {
     tableName: 'ProfissionalEducador',

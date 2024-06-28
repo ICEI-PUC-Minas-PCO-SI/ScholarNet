@@ -66,8 +66,8 @@ app.post("/post/alunoData", async (req, res) => {
 app.patch("/update/alunoData/:cpfAluno", async (req, res) => {
   try {
     const cpfAluno = req.params.cpfAluno;
-    const { Nome, Email, Senha, Telefone, DtNascimento, Descricao, Localizacao } = req.body;
-    await updateAluno(cpfAluno, Nome, Email, Senha, Telefone, DtNascimento, Descricao, Localizacao);
+    const { Nome, Email, Senha, Telefone, DtNascimento, Descricao, Localizacao, Foto} = req.body;
+    await updateAluno(cpfAluno, Nome, Email, Senha, Telefone, DtNascimento, Descricao, Localizacao, Foto);
     res.status(200).json({ message: "Aluno atualizado com sucesso" });
   } catch (error) {
     console.error(error);
@@ -99,7 +99,7 @@ app.get("/educadorData", async (req, res) => {
 
 app.post("/post/educadorData", async (req, res) => {
   try {
-    const {Nome, Email, Senha, Telefone, DtNascimento, Descricao, Localizacao } = req.body;
+    const {CPF, Nome, Email, Senha, Telefone, DtNascimento, Descricao, Localizacao } = req.body;
     await createEducador(CPF, Nome, Email, Senha, Telefone,  DtNascimento, Descricao, Localizacao );
     res.status(201).json({ message: "Educador criado com sucesso" });
   } catch (error) {
@@ -111,8 +111,8 @@ app.post("/post/educadorData", async (req, res) => {
 app.patch("/update/educadorData/:cpfEducador", async (req, res) => {
   try {
     const cpfEducador = req.params.cpfEducador;
-    const {nomeEducador, email, senha, telefone, DtNascimento, Descricao, Localizacao } = req.body;
-    await updateEducador(cpfEducador, nomeEducador, email, senha, telefone, DtNascimento, Descricao, Localizacao );
+    const {nomeEducador, email, senha, telefone, DtNascimento, Descricao, Localizacao, Foto } = req.body;
+    await updateEducador(cpfEducador, nomeEducador, email, senha, telefone, DtNascimento, Descricao, Localizacao, Foto );
     res.status(200).json({ message: "Educador atualizado com sucesso" });
   } catch (error) {
     console.error(error);
@@ -164,16 +164,13 @@ app.post("/post/cursoData", async (req, res) => {
 app.patch("/update/cursoData/:CursoID", async (req, res) => {
   try {
     const id = req.params.CursoID;
-    const { NomeCurso, Descricao, MaterialEstudo, AreaConhecimento, CargaHoraria, Video, CpfUser} = req.body;
+    const { NomeCurso, Descricao, MaterialEstudo, CargaHoraria} = req.body;
     await updateCursos(
       id,
       NomeCurso,
       Descricao,
       MaterialEstudo,
-      AreaConhecimento,
-      CargaHoraria,
-      Video,
-      CpfUser
+      CargaHoraria
     );
     res.status(200).json({ message: "Curso atualizado com sucesso" });
   } catch (error) {

@@ -30,6 +30,9 @@ const Aluno = sequelize.define(
     },
     Descricao: {
       type: DataTypes.STRING,
+    },
+    Foto: {
+      type: DataTypes.STRING,
     }
   },
   {

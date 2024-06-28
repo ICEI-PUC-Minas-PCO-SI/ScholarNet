@@ -44,8 +44,8 @@
             <a class="nav-link active text-light hover-effect-btn" aria-current="page" href="./faq.html">FAQ</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active text-light hover-effect-btn" aria-current="page"
-              href="./telapublicacao.html">Publicar</a>
+            <a class="nav-link active text-light hover-effect-btn" aria-current="page" href="./telapublicacao.html"
+              id="publicar-btn">Publicar</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active text-light hover-effect-btn" aria-current="page"
@@ -61,14 +61,40 @@
 
   <div class="Foto-Usuario">
     <div class="Foto-Container">
-      <img src="avatar.jpg" alt="Foto de Perfil" class="Usuario-Foto"
-        onerror="this.style.display='none'; document.getElementById('avatar').style.display='block';">
-      <div id="avatar" style="display: none;">
-        <i class="fas fa-user-circle"></i> <!-- Ícone Usuário sem foto -->
+      <div id="avatar" style="display: block;">
+        <img src="./imgs/black.png" alt="" class="ftPerfil" id="ftPerfil">
       </div>
 
       <div class="Icone">
-        <i class="fas fa-camera" id="edit-fotoP-btn"></i> <!-- Ícone de câmera para adicionar foto -->
+        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+          <i class="fas fa-camera" id="edit-foto"></i>
+        </button>
+        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Foto de Perfil</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+
+                <div class="row">
+                  <div class="col text-end">
+                    <label for="URL-imagem">Url da imagem</label>
+                  </div>
+                  <div class="col text-start">
+                    <input type="text" id="URL-ftPerfil">
+                  </div>
+                </div>
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-primary" id="alterarFoto">Salvar</button>
+              </div>
+            </div>
+          </div>
+        </div>
 
         <!-- Input para upload de foto -->
         <input type="file" id="upload-foto" style="display: none;">
@@ -155,18 +181,12 @@
 
   <div class="services-Usuário d-flex flex-column align-items-center">
     <div class="w-size">
-      <h2 class="text-center">Serviços</h2>
       <div class="d-block d-sm-flex justify-content-center">
         <div class="services-Prestados">
           <h3>Cursos Publicados</h3>
-          <ul class="list-group">
-            <li class="list-group-item list-group-item-action">Serviço 1</li>
-            <li class="list-group-item list-group-item-action">Serviço 2</li>
-            <li class="list-group-item list-group-item-action">Serviço 3</li>
-          </ul>
           <div class="d-flex justify-content-center align-items-center mt-3">
-          <button class="btn btn-curso"><a href="./cursoexclusao.html">Editar Cursos</a></button>
-        </div>
+            <button class="btn btn-curso"><a href="./cursoexclusao.html">Editar Cursos</a></button>
+          </div>
         </div>
       </div>
     </div>
